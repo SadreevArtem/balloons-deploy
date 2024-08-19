@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 247, 247, 247;
+  --background-end-rgb: 247, 247, 247;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  letter-spacing: 0.025em;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+.header-scroll {
+  data-bgcolor-rgba-afterscroll:"rgba(255,255,255,0.70)"
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-full h-full px-4 md:px-6 lg:max-w-[1024px] lg:px-0 xl:max-w-[1360px] mx-auto;
+  }
+  .bordered-card {
+    @apply border border-[#f9deaf] rounded;
+  }
+  .header-link {
+    @apply text-[#454543] hover:text-[#bda070] cursor-pointer;
+  }
+  * {
+    @apply supports-[-webkit-backdrop-filter]:outline-none outline-none;
+  }
+}
