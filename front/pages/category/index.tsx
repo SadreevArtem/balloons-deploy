@@ -3,26 +3,30 @@ import { AppHead } from "@/shared/components/AppHead";import { CatalogComponent 
 import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { ReactElement } from "react";
 import { Header } from "@/shared/components/Header/Header";
-import { CATALOG } from "@/shared/static";
+import { CATALOG, CategoriesMap } from "@/shared/static";
 ;
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
-const Catalog = ()=> {
+const Category = ()=> {
   return (
     <>
       <AppHead title='Каталог' description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-4">
-          <CatalogComponent catalog={CATALOG} title="Каталог" className="md:mt-[60px] mt-[46px]"/>
+          <CatalogComponent catalog={CategoriesMap.map(el=>({
+             id: el.id,
+             name: el.title,
+             href: `/category/${el.categoryName}`,
+          }))} title="Категории" className="md:mt-[60px] mt-[46px]"/>
         </div>
       </div>
     </>
   );
 };
 
-Catalog.getLayout = function getLayout(page: ReactElement) {
+Category.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
       {page}
@@ -31,4 +35,4 @@ Catalog.getLayout = function getLayout(page: ReactElement) {
 }
 
 
-export default Catalog;
+export default Category;

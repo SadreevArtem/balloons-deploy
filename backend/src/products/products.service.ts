@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
-import { FindOneOptions, Like, Repository } from 'typeorm';
+import { ArrayContains, FindOneOptions, Like, Repository } from 'typeorm';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { Categories } from 'src/types';
+import { Categories, Tags } from 'src/types';
 
 @Injectable()
 export class ProductsService {
@@ -20,6 +20,13 @@ export class ProductsService {
   getProductsByCategories(category: Categories): Promise<Product[]> {
     return this.productRepository.find({
       where: { categories: category === 'all' ? '' : category },
+      order: { createdAt: 'DESC' },
+    });
+  }
+
+  getProductByTags(tag: Tags): Promise<Product[]> {
+    return this.productRepository.find({
+      where: { tags: ArrayContains([tag]) },
       order: { createdAt: 'DESC' },
     });
   }

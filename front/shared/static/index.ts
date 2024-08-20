@@ -1,4 +1,3 @@
-import { Product } from "../types";
 
 export const MetaData = {
   title: "Barballs72! Воздушные шары в Тюмени!",
@@ -88,6 +87,18 @@ export const CATALOG = [
     href: "/photozones",
   },
 ];
+
+export const CategoriesMap = [
+  { id: 1, categoryName: 'Photozone', title: 'Фотозона' },
+  { id: 2, categoryName: 'Latex', title: 'Латексные шары' },
+  { id: 3, categoryName: 'Figure', title: 'Фигуры' },
+  { id: 4, categoryName: 'Numbers', title: 'Цифры' },
+  { id: 5, categoryName: 'Stars', title: 'Звезды' },
+  { id: 6, categoryName: 'Hearts', title: 'Сердца' },
+  { id: 7, categoryName: 'Boxes', title: 'Коробочки-сюрпризы' },
+  { id: 8, categoryName: 'WalkingFigures', title: 'Ходячие фигуры' },
+  { id: 9, categoryName: 'BunchesBalls', title: 'Связки шаров' },
+]
 
 export const accordeonItems = [
   {

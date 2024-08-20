@@ -1,15 +1,17 @@
 import { api } from "@/shared/api/api";
 import { useAuthStore } from "@/shared/stores/auth";
 import { Product } from "@/shared/types";
-import { FormControl, FormControlLabel, InputLabel, MenuItem, Select, SelectChangeEvent, Switch, TextField } from "@mui/material";
+import { FormControl, FormControlLabel, InputLabel, MenuItem, Switch, TextField } from "@mui/material";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../Button";
 import { useRouter } from "next/router";
-import { CategoryName } from "../Products/static";
+import { CategoryName, customTags, Tags } from "../Products/static";
 import Image from "next/image";
 import { appToast } from "../AppToast/components/lib/appToast";
+import { CategoriesMap } from "@/shared/static";
 
 
 type Props = {
@@ -26,7 +28,16 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
     const getQueryKey = (id: number) => ['product'].concat(id.toString());
     const router = useRouter();
     const [category, setCategory] = React.useState<CategoryName>('all');
+    const [tags, setTags] = React.useState<string[]>([]);
     
+  const handleChangeTag = (event: SelectChangeEvent<string[]>) => {
+    const {
+      target: { value },
+    } = event;
+    setTags(
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
   const handleChange = (event: SelectChangeEvent) => {
     setCategory(event.target.value as CategoryName);
   };
@@ -69,7 +80,14 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
     },
   })
   const onDeleteClick = () => deleteMutation.mutate();
-  const onSubmit: SubmitHandler<Inputs> = (data) => mutation.mutate({...data, categories: category,oldPrice: +data.oldPrice, currentPrice: +data.currentPrice });
+  const onSubmit: SubmitHandler<Inputs> = (data) =>
+    mutation.mutate({
+      ...data,
+      tags: tags,
+      categories: category,
+      oldPrice: +data.oldPrice,
+      currentPrice: +data.currentPrice,
+    });
   useEffect(() => {
     if (!product) return;
     Object.keys(product).forEach((key) => {
@@ -78,6 +96,7 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
       }
     });
     setCategory(product.categories);
+    setTags(product.tags);
   }, [product, setValue]);
   return (
     <>
@@ -170,6 +189,23 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
                   <MenuItem value={"girlfriend"}>Девушке</MenuItem>
                   <MenuItem value={"men"}>Мужчине</MenuItem>
                   <MenuItem value={"photozone"}>Фотозона</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Тэги</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="tags"
+                  value={tags}
+                  multiple
+                  label="Тэги"
+                  onChange={handleChangeTag}
+                >
+                  {CategoriesMap.map((item) => (
+                    <MenuItem key={item.categoryName} value={item.categoryName}>
+                      {item.title}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
               <div className="flex gap-4">

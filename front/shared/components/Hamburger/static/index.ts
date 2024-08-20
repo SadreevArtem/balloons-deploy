@@ -9,11 +9,7 @@ export const HEADER_MENU: HeaderMenuItem[] = [
     href: "/catalog",
   },
   {
-    value: "Выписка",
-    href: "/extract",
-  },
-  {
-    value: "Девочке",
-    href: "/girls",
+    value: "Категории",
+    href: "/category",
   },
 ];

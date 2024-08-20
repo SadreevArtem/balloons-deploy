@@ -4,7 +4,11 @@ import { inter } from "@/pages";
 import { CATEGORIES } from "@/shared/static";
 import { CategoryItem } from "./components/CategoryItem/CategoryItem";
 
-export const Categories: React.FC = () => {
+type Props = {
+  className?: string;
+}
+
+export const Categories: React.FC<Props> = () => {
   return (
     <>
       <section className={`w-full flex flex-col py-4 ${inter.className} bg-[#f7f7f7]`}>

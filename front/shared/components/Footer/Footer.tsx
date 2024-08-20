@@ -2,11 +2,14 @@ import React from "react";
 import Link from "next/link";
 import { Socials } from "../Socials/Socials";
 import { inter } from "@/pages";
+import { CATALOG, CategoriesMap } from "@/shared/static";
 
 export const Footer: React.FC = () => {
   return (
     <>
-      <footer className={`w-full flex flex-col py-4 ${inter.className} md:mt-[60px] mt-4`}>
+      <footer
+        className={`w-full flex flex-col py-4 ${inter.className} md:mt-[60px] mt-4`}
+      >
         <div className="container grid md:grid-cols-4 md:gap-8 gap-4">
           <div className="flex flex-col gap-6 md:items-center items-start mb-4 md:mb-6">
             <div className="relative flex flex-col md:flex-row gap-6 items-center">
@@ -25,7 +28,11 @@ export const Footer: React.FC = () => {
               <Socials
                 className=""
                 socials={[
-                  { id: 1, name: "social-vk", value: "https://vk.com/public211798255" },
+                  {
+                    id: 1,
+                    name: "social-vk",
+                    value: "https://vk.com/public211798255",
+                  },
                   {
                     id: 2,
                     name: "social-tg",
@@ -46,25 +53,21 @@ export const Footer: React.FC = () => {
           </div>
           <div className="text-primary flex flex-col">
             <h5 className="font-extrabold mb-3">ДЛЯ КОГО</h5>
-            <span>Девочкам</span>
-            <span>Мальчикам</span>
-            <span>Девушкам</span>
-            <span>Мужчинам</span>
-            <span>Девичник</span>
-            <span>На выписку</span>
-            <span>Gender part</span>
+            {CATALOG.map((item) => (
+              <Link href={item.href} key={item.id}>
+                <span>{item.name}</span>
+              </Link>
+            ))}
           </div>
           <div className="text-primary flex  flex-col">
-            <h5 className="font-extrabold uppercase mb-3">Категории шаров</h5>
-            <span>Фотозоны</span>
-            <span>Латексные шары</span>
-            <span>Фигуры</span>
-            <span>Цифры</span>
-            <span>Звезды</span>
-            <span>Сердца</span>
-            <span>Связки шаров</span>
-            <span>Коробки-сюрпризы</span>
-            <span>Ходячие фигуры</span>
+            <Link href={"/category"}>
+              <h5 className="font-extrabold uppercase mb-3">Категории шаров</h5>
+            </Link>
+            {CategoriesMap.map((item) => (
+              <Link href={`/category/${item.categoryName}`} key={item.id}>
+                <span>{item.title}</span>
+              </Link>
+            ))}
           </div>
           <div className="text-primary flex flex-col">
             <h5 className="font-extrabold uppercase mb-3">Информация</h5>

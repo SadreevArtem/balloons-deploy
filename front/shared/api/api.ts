@@ -24,6 +24,15 @@ class API {
         return data;
       });
   }
+  getProductsByTag = (tag: string) => {
+    return fetch(
+      `${this.baseUrl}/products/tags/${tag}`
+    )
+     .then((res) => res.json())
+     .then((data) => {
+        return data;
+      });
+  }
   getSelectionsProducts = () => {
     return fetch(`${this.baseUrl}/products/all/selections`)
       .then((res) => res.json())

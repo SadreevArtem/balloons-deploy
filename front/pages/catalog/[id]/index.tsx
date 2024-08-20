@@ -1,14 +1,9 @@
 import { Poiret_One } from "next/font/google";
 import { AppHead } from "@/shared/components/AppHead";
-import { CartComponent } from "@/shared/components/Cart";
 import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
 import { DetailProductsClient } from "@/shared/components/DetailProductsClient/DetailProductsClient";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { dehydrate, QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Product } from "@/shared/types";
-import { api } from "@/shared/api/api";
 import { Header } from "@/shared/components/Header/Header";
 ;
 

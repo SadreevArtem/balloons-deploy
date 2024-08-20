@@ -7,3 +7,14 @@ export type Categories =
   | 'photozone'
   | 'all'
   | '';
+
+export type Tags =
+  | 'Photozone'
+  | 'Latex'
+  | 'Figure'
+  | 'Numbers'
+  | 'Stars'
+  | 'Hearts'
+  | 'Boxes'
+  | 'WalkingFigures'
+  | 'BunchesBalls';

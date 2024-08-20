@@ -1,5 +1,28 @@
 export type CategoryName = 'all' | 'out' | 'girl' | 'boy' | 'girlfriend' | 'men' | 'photozone' | ''
 
+export type Tags =
+  | 'Photozone'
+  | 'Latex'
+  | 'Figure'
+  | 'Numbers'
+  | 'Stars'
+  | 'Hearts'
+  | 'Boxes'
+  | 'WalkingFigures'
+  | 'BunchesBalls';
+
+ export  const customTags = [
+   "Photozone",
+   "Latex",
+   "Figure",
+   "Numbers",
+   "Stars",
+   "Hearts",
+   "Boxes",
+   "WalkingFigures",
+   "BunchesBalls",
+ ];
+
 type Category = {
     id: number;
     categoryName: CategoryName;
