@@ -15,10 +15,10 @@ services:
     depends_on:
       - db
 
-  front:
+  frontend:
     container_name: frontend
     build:
-      context: frontend
+      context: front
       dockerfile: Dockerfile
     image: frontend-dev
     ports:

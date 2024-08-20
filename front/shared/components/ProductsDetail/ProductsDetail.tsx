@@ -20,7 +20,7 @@ type Inputs = Product;
 
 
 export const ProductsDetail: React.FC<Props> = ({id}) => {
-  const isEdit= id.toString() !=="create";
+  const isEdit = id !== 0;
   const queryClient = useQueryClient()
     const getProductById = () => api.getProductById(id);
     const getQueryKey = (id: number) => ['product'].concat(id.toString());
@@ -168,7 +168,7 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
                   <MenuItem value={"girl"}>Девочке</MenuItem>
                   <MenuItem value={"boy"}>Мальчику</MenuItem>
                   <MenuItem value={"girlfriend"}>Девушке</MenuItem>
-                  <MenuItem value={"man"}>Мужчине</MenuItem>
+                  <MenuItem value={"men"}>Мужчине</MenuItem>
                   <MenuItem value={"photozone"}>Фотозона</MenuItem>
                 </Select>
               </FormControl>

@@ -15,29 +15,29 @@ import { Header } from "@/shared/components/Header/Header";
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
 
-export const getServerSideProps = async ({ params }: GetServerSidePropsContext) => {
-  const id = params?.id;
+// export const getServerSideProps = async ({ params }: GetServerSidePropsContext) => {
+//   const id = params?.id;
 
-  const item = await api.getProductById(id ? +id : 0);
-  return {
-    props: {
-      item,
-    },
-  };
-}
+//   const item = await api.getProductById(id ? +id : 0);
+//   return {
+//     props: {
+//       item,
+//     },
+//   };
+// }
 
 
-const ProductDetailClient = ({item}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ProductDetailClient = () => {
     const router = useRouter();
     const id = router.query.id;
-    if (!id || !item) return null;
+    if (!id ) return null;
   return (
     <>
       <AppHead title={''} description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
       <div className={`h-[100vh]${inter.className}`}>
-        <DetailProductsClient item={item} />
+        <DetailProductsClient id={+id} />
       </div>
       </div>
     </>

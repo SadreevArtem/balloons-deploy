@@ -4,15 +4,24 @@ import Image from "next/image";
 import { Button } from "../Button";
 import Link from "next/link";
 import { useCartStore } from "@/shared/stores/cartStore";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/shared/api/api";
 
 type Props = {
-    item : Product;
+    id : number;
   }
   
 
-export const DetailProductsClient: React.FC<Props> = ({item}) => {
+export const DetailProductsClient: React.FC<Props> = ({id}) => {
+  const getProductById = () => api.getProductById(id);
+  const getQueryKey = (id: number) => ['product'].concat(id.toString());
+  const { data: item, isLoading } = useQuery<Product>({
+    queryKey: getQueryKey(id),
+    queryFn: getProductById,
+    enabled: !!id,
+  });
     const addCart = useCartStore((state) => state.addCart);
-    const addCartHandler = () => addCart(item);
+    const addCartHandler = () => addCart(item as Product);
     return (
       <div className="container md:mt-32 mt-24">
         <div className="flex justify-end relative max-md:flex-col">
@@ -25,8 +34,8 @@ export const DetailProductsClient: React.FC<Props> = ({item}) => {
               <Image
                 width={560}
                 height={750}
-                src={item.image}
-                alt={item.name}
+                src={item?.image || ""}
+                alt={item?.name ||""}
                 className="top-0 left-0 right-0 bottom-0"
               />
             </div>
@@ -38,21 +47,21 @@ export const DetailProductsClient: React.FC<Props> = ({item}) => {
               <Image
                 width={560}
                 height={750}
-                src={item.image}
-                alt={item.name}
+                src={item?.image || ""}
+                alt={item?.name ||""}
                 className="top-0 left-0 right-0 bottom-0"
               />
             </div>
           </div>
           <div className="w-[50%] ml-[60px] pt-[100px] max-md:pt-[45px] max-md:ml-[20px] max-md:w-full">
             <h1 className="text-primary md:text-[80px] max-md:text-xl max-md:mb-2">
-              {item.name}
+              {item?.name}
             </h1>
             <div className="pl-4 text-lg flex flex-col gap-2 max-md:text-base w-full">
-              <p className="text-primary block">{item.description}</p>
+              <p className="text-primary block">{item?.description}</p>
               <div className="flex md:mt-8 w-full md:gap-32 gap-24 items-center">
                 <span className="text-primary text-lg font-extrabold">
-                  {item.currentPrice} руб.
+                  {item?.currentPrice} руб.
                 </span>
                 <Button onButtonClick={addCartHandler} title="В корзину" />
               </div>

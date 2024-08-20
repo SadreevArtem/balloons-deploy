@@ -19,7 +19,7 @@ export const Products: React.FC = () => {
   return (
     <section className="flex flex-col w-full">
       <div className="flex mb-2">
-        <Link className="ml-auto" href="/admin/product/create"><Button className=" w-auto px-3" title="Добавить новый" /></Link>
+        <Link className="ml-auto" href="/admin/product/0"><Button className=" w-auto px-3" title="Добавить новый" /></Link>
       </div>
       <Tabs setTab={setTab} currentTab={tab} />
       {!isLoading ? <div className="mt-2">

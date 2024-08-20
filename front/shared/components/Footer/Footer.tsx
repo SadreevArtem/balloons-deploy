@@ -25,24 +25,22 @@ export const Footer: React.FC = () => {
               <Socials
                 className=""
                 socials={[
-                  { id: 1, name: "social-vk", value: "/" },
+                  { id: 1, name: "social-vk", value: "https://vk.com/public211798255" },
                   {
                     id: 2,
                     name: "social-tg",
-                    value: "/",
+                    value: "https://t.me/Barballs72",
                   },
-                  { id: 3, name: "social-youtube", value: "/" },
-                  { id: 4, name: "social-ok", value: "/" },
                 ]}
               />
               <Link
-                href={`tel:+79229998877`}
+                href={`tel:+79088791922`}
                 className="text-primary w-fit hover:text-hover"
               >
-                +7 (922) 222 22 22
+                +7 (908) 879 19 22
               </Link>
               <p className="text-primary w-fit hover:text-hover">
-                г. Тюмень ул.Тюменская 999
+                г. Тюмень ул. Избышева 6
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const category: Category[] = [
     {
         id:1,
         categoryName: 'all',
-        value: "Все категории"
+        value: "Без категории"
     },
     {
         id:2,

@@ -15,7 +15,7 @@ export default function ProductPage() {
   return (
     <>
       <div className={`h-[100vh]${inter.className}`}>
-        <ProductsDetail id={id as unknown as number} />
+        <ProductsDetail id={+id as unknown as number} />
       </div>
     </>
   );
