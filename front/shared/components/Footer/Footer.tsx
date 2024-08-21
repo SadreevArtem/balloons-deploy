@@ -71,7 +71,10 @@ export const Footer: React.FC = () => {
           </div>
           <div className="text-primary flex flex-col">
             <h5 className="font-extrabold uppercase mb-3">Информация</h5>
-            <span>О нас</span>
+            <Link href={"/about"}>
+              <span>О нас</span>
+            </Link>
+
             <span>Доставка и оплата</span>
             <span>Акции и скидки</span>
             <span>Полезная информация</span>

@@ -12,4 +12,8 @@ export const HEADER_MENU: HeaderMenuItem[] = [
     value: "Категории",
     href: "/category",
   },
+  {
+    value: "О нас",
+    href: "/about",
+  }
 ];
