@@ -128,4 +128,4 @@ class API {
   
 }
 
-export const api = new API('http://147.45.153.8/:4000')
+export const api = new API('https://147.45.153.8:4000')
