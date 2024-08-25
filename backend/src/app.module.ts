@@ -29,6 +29,9 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads'), // Путь к папке с файлами
       serveRoot: '/uploads', // Путь в URL
+      serveStaticOptions: {
+        index: false, // Отключает автоматический поиск index.html
+      },
     }),
     TypeOrmModule.forRootAsync({
       useClass: DatabaseConfigFactory,
