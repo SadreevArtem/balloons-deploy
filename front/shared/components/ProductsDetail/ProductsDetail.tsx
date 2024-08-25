@@ -1,6 +1,6 @@
 import { api } from "@/shared/api/api";
 import { useAuthStore } from "@/shared/stores/auth";
-import { Product } from "@/shared/types";
+import { FilesModel, Product } from "@/shared/types";
 import { FormControl, FormControlLabel, InputLabel, MenuItem, Switch, TextField } from "@mui/material";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -12,6 +12,7 @@ import { CategoryName, customTags, Tags } from "../Products/static";
 import Image from "next/image";
 import { appToast } from "../AppToast/components/lib/appToast";
 import { CategoriesMap } from "@/shared/static";
+import { ImageInput } from "../ImageInput/ImageInput";
 
 
 type Props = {
@@ -57,6 +58,7 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
   const token = useAuthStore((state) => state.token);
   const updateProductFunc = (input: Product)=> api.updateProduct(input, token);
   const createProductFunc = (input: Product)=> api.createProduct(input, token);
+  const uploadImageFunc = (file: File) => api.uploadImage(file);
   const mutation = useMutation( {
     mutationFn: isEdit? updateProductFunc : createProductFunc,
     onSuccess: () => {
@@ -68,6 +70,16 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
       appToast.error("Произошла ошибка");
     },
   })
+  const uploadImageMutation = useMutation({
+    mutationFn: uploadImageFunc,
+    onSuccess: (res: FilesModel) => {
+      appToast.success("Успешно загружено");
+      setValue("image", res.path);
+    },
+  });
+  const uploadImageHandler: (image?: File | null) => void = (image) => {
+uploadImageMutation.mutate( image as File );
+  };
   const deleteMutation  = useMutation( {
     mutationFn: ()=> api.deleteProduct(id, token),
     onSuccess: () => {
@@ -88,6 +100,9 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
       oldPrice: +data.oldPrice,
       currentPrice: +data.currentPrice,
     });
+    const deleteImageHandler = async () => {
+      setValue("image", "");
+    };
   useEffect(() => {
     if (!product) return;
     Object.keys(product).forEach((key) => {
@@ -224,13 +239,28 @@ export const ProductsDetail: React.FC<Props> = ({id}) => {
                 </button>
               </div>
             </form>
-            <Image
+            <Controller
+              control={control}
+              name="image"
+              render={({ field }) => (
+                <ImageInput
+                  addAlert={() => console.log("alert")}
+                  url={field?.value ?? ""}
+                  value={{ path: field.value }}
+                  onUpdate={field.onChange}
+                  withPreview={false}
+                  onChange={uploadImageHandler}
+                  onDelete={deleteImageHandler}
+                />
+              )}
+            />
+            {/* <Image
               className="py-4 w-[240px] h-[360px]"
               alt=""
               src={watch("image")}
               width={300}
               height={20}
-            />
+            /> */}
           </div>
         </section>
       )}

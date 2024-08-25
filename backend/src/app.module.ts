@@ -16,12 +16,19 @@ import { TelegrafConfigService } from './config/telegramm.factory';
 import { TelegrammModule } from './telegramm/telegramm.module';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { UploadModule } from './upload/upload.module';
+import { join } from 'path';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'uploads'), // Путь к папке с файлами
+      serveRoot: '/uploads', // Путь в URL
     }),
     TypeOrmModule.forRootAsync({
       useClass: DatabaseConfigFactory,
@@ -48,6 +55,7 @@ import { OrdersModule } from './orders/orders.module';
     AuthModule,
     ProductsModule,
     OrdersModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [

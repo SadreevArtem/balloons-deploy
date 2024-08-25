@@ -17,3 +17,9 @@ export type CartItem = {
   product: Product,
   quantity: number,
 };
+
+export type FilesModel = {
+  originalname: string,
+  filename: string,
+  path: string,
+}
