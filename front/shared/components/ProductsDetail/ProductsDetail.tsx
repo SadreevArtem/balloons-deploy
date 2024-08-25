@@ -117,7 +117,7 @@ uploadImageMutation.mutate( image as File );
     <>
       {!isLoading && (
         <section className="container px-40">
-          <div className="flex mt-8 justify-between">
+          <div className="flex mt-8 justify-between gap-4">
             <h2 className="text-xl">
               {isEdit ? "Редактирование" : "Добавить новый"}
             </h2>
@@ -254,13 +254,6 @@ uploadImageMutation.mutate( image as File );
                 />
               )}
             />
-            {/* <Image
-              className="py-4 w-[240px] h-[360px]"
-              alt=""
-              src={watch("image")}
-              width={300}
-              height={20}
-            /> */}
           </div>
         </section>
       )}

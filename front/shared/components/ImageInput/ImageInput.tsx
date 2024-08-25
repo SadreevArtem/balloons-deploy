@@ -1,18 +1,10 @@
 import {
   AlertColor,
   Box,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  ImageListItemBar,
   Input,
   InputProps,
-  TextField
 } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
-import EditIcon from "@mui/icons-material/Edit";
-import CloseIcon from "@mui/icons-material/Close";
 import React, {
   ChangeEvent,
   forwardRef,
@@ -144,15 +136,15 @@ export const ImageInput = forwardRef<HTMLDivElement, Props>(
       );
     }
     return (
-      <Box ref={ref} className="w-full flex justify-center">
+      <Box ref={ref} className="w-[40%] mt-4 p-2">
         {!isImagePreview && (
-          <Box className="flex items-center relative w-full h-[200px] transition hover:bg-gray-200 rounded-xl border border-dashed border-primary">
+          <Box className=" hover:bg-gray-200 text-center border border-dashed p-2 relative cursor-pointer">
             <Input
               inputProps={{
                 accept: "image/*",
-                className: " w-full h-full opacity-1 z-2 p-0",
+                className: "block absolute top-0 left-0 right-0 bottom-0 w-full !h-full opacity-1 z-2 p-0",
               }}
-              className="!absolute w-full h-full opacity-0"
+              className="!absolute w-full !h-[164px] opacity-0 top-0 left-0 right-0 bottom-0"
               type="file"
               id={id}
               onChange={handleImage}
@@ -171,7 +163,7 @@ export const ImageInput = forwardRef<HTMLDivElement, Props>(
           </Box>
         )}
         {isImagePreview && (
-          <Box className="relative lg:w-[220px] text-red-700 p-6">
+          <Box className="relative lg:w-[360px] text-red-700 p-6">
             <CancelIcon
               onClick={handleDeleteImage}
               onKeyPress={handleDeleteImage}
@@ -179,68 +171,12 @@ export const ImageInput = forwardRef<HTMLDivElement, Props>(
               className="absolute right-0 top-0 cursor-pointer"
             />
             <Image
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               src={imageUrl || url}
               alt={value?.filename || ""}
               className="object-cover w-full h-full"
             />
-            <ImageListItemBar
-              title={
-                selectedImage
-                  ? getFileName(selectedImage?.name)
-                  : value?.filename ?? ""
-              }
-              subtitle={
-                <span className="text-gray-300">
-                  {value?.originalname ?? ""}
-                </span>
-              }
-              actionIcon={
-                <IconButton
-                  className="text-white"
-                  onClick={getHandlerImageClick(value)}
-                >
-                  <EditIcon />
-                </IconButton>
-              }
-            />
-            <Dialog
-              open={!!open}
-              onClose={onClose}
-              classes={{ paper: "w-[400px]" }}
-            >
-              <DialogTitle className="flex justify-between gap-2">
-                {/* eslint-disable-next-line */}
-                {/* @ts-ignore */}
-                <Text>Original image</Text>
-                <IconButton onClick={onClose}>
-                  <CloseIcon />
-                </IconButton>
-              </DialogTitle>
-              <DialogContent>
-                <Box
-                  component="form"
-                  className="flex flex-col gap-4 pt-2"
-                  onSubmit={() => console.log("Submit")}
-                >
-                  <TextField
-                    name="name"
-                    defaultValue={
-                      imagePreview?.filename ?? value?.originalname ?? ""
-                    }
-                    label={<Text>Title</Text>}
-                  />
-                  <TextField
-                    name="alt"
-                    defaultValue={
-                      imagePreview?.originalname ?? value?.originalname ?? ""
-                    }
-                    label={<Text>Alternative text</Text>}
-                  />
-                </Box>
-              </DialogContent>
-            </Dialog>
           </Box>
         )}
       </Box>
