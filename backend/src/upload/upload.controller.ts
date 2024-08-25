@@ -14,7 +14,7 @@ export class UploadController {
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
-        destination: join('/usr/src/app/uploads'), // Путь внутри контейнера
+        destination: join('/app/uploads'), // Путь внутри контейнера
         filename: (req, file, callback) => {
           const uniqueSuffix =
             Date.now() + '-' + Math.round(Math.random() * 1e9);
