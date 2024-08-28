@@ -15,6 +15,7 @@ export type CategoryName =
   | "figures"
   | "surpriseBox"
   | "walkingFigures"
+  | "ballsCeil"
   | "all"
   | "";
 
@@ -109,6 +110,11 @@ export const category: Category[] = [
       id: 17,
       categoryName: "walkingFigures",
       value: "Ходячие фигуры",
+    },
+    {
+      id: 18,
+      categoryName: "ballsCeil",
+      value: "Шары на потолок",
     },
   ];
   

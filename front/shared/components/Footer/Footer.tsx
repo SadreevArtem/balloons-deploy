@@ -74,10 +74,12 @@ export const Footer: React.FC = () => {
             <Link href={"/about"}>
               <span>О нас</span>
             </Link>
-
-            <span>Доставка и оплата</span>
-            <span>Акции и скидки</span>
-            <span>Полезная информация</span>
+            <Link href={"/delivery"}>
+              <span>Доставка и оплата</span>
+            </Link>
+            <Link href={"/useful"}>
+              <span>Полезная информация</span>
+            </Link>
           </div>
         </div>
       </footer>

@@ -108,6 +108,12 @@ export const CATEGORIES = [
     image: "images/categories/walking-figures.jpg",
     href: "/walking-figures",
   },
+  {
+    id: 18,
+    name: "Шары на потолок",
+    image: "images/categories/balls-ceil.jpg",
+    href: "/balls-ceil",
+  },
 ];
 
 
@@ -196,6 +202,11 @@ export const CATALOG = [
     id: 17,
     name: "Ходячие фигуры",
     href: "/walking-figures",
+  },
+  {
+    id: 18,
+    name: "Шары на потолок",
+    href: "/balls-ceil",
   },
 ];
 

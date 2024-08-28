@@ -15,6 +15,7 @@ export type Categories =
   | 'figures'
   | 'surpriseBox'
   | 'walkingFigures'
+  | 'ballsCeil'
   | 'all'
   | '';
 

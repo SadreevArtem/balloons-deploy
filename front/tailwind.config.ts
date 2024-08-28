@@ -23,7 +23,7 @@ const config: Config = {
         "sans-inter": ["var(--font-inter)", ...fontFamily.sans],
       },
       colors: {
-        primary: "#9d8c98",
+        primary: "#52483f",
         link: "#cbcbc4",
         secondary: "linear-gradient(28deg,#e0c394,#f9deaf 50%,#e0c394)",
         hover: "#bda070",

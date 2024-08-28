@@ -213,7 +213,7 @@ uploadImageMutation.mutate( image as File );
                   <MenuItem value={"figures"}>Фигуры</MenuItem>
                   <MenuItem value={"surpriseBox"}>Коробка - сюрприз</MenuItem>
                   <MenuItem value={"walkingFigures"}>Ходячие фигуры</MenuItem>
-
+                  <MenuItem value={"ballsCeil"}>Шары на потолок</MenuItem>
                 </Select>
               </FormControl>
               <FormControl fullWidth>
