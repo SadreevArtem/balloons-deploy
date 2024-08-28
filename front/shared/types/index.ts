@@ -1,4 +1,4 @@
-import { CategoryName, Tags } from "../components/Products/static";
+import { CategoryName } from "../components/Products/static";
 
 export type Product = {
     id: number,

@@ -24,11 +24,9 @@ export const CategoryItem: React.FC<Props> = ({item}) => {
             className=" rounded-[50%] md:w-[145px] md:h-[145px] w-[100px] h-[100px]"
           />
         </div>
-        <Link href={item.href}>
           <span className="text-primary md:text-xl text-lg font-extrabold">
             {item.name}
           </span>
-        </Link>
       </article>
     </>
   );

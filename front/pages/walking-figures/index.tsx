@@ -7,21 +7,21 @@ import { Header } from "@/shared/components/Header/Header";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
-const Photozones = () => {
+const WalkingFigures = () => {
   return (
     <>
-      <AppHead title="Фотозоны" description="" />
+      <AppHead title="Ходячие фигуры" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-4">
-          <PageProducts title="Фотозоны" category="photozones" className="md:mt-[60px] mt-[46px]" />
+          <PageProducts title="Ходячие фигуры" category="walkingFigures" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>
     </>
   );
 };
 
-Photozones.getLayout = function getLayout(page: ReactElement) {
+WalkingFigures.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
       {page}
@@ -30,4 +30,4 @@ Photozones.getLayout = function getLayout(page: ReactElement) {
 }
 
 
-export default Photozones;
+export default WalkingFigures;

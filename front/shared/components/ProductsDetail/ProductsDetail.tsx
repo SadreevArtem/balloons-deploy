@@ -8,8 +8,7 @@ import React, { useEffect } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../Button";
 import { useRouter } from "next/router";
-import { CategoryName, customTags, Tags } from "../Products/static";
-import Image from "next/image";
+import { CategoryName } from "../Products/static";
 import { appToast } from "../AppToast/components/lib/appToast";
 import { CategoriesMap } from "@/shared/static";
 import { ImageInput } from "../ImageInput/ImageInput";
@@ -198,12 +197,23 @@ uploadImageMutation.mutate( image as File );
                   onChange={handleChange}
                 >
                   <MenuItem value={""}>Без категории</MenuItem>
-                  <MenuItem value={"out"}>На выписку</MenuItem>
-                  <MenuItem value={"girl"}>Девочке</MenuItem>
-                  <MenuItem value={"boy"}>Мальчику</MenuItem>
-                  <MenuItem value={"girlfriend"}>Девушке</MenuItem>
-                  <MenuItem value={"men"}>Мужчине</MenuItem>
-                  <MenuItem value={"photozone"}>Фотозона</MenuItem>
+                  <MenuItem value={"discharge"}>На выписку</MenuItem>
+                  <MenuItem value={"genderParty"}>Гендер - пати</MenuItem>
+                  <MenuItem value={"bacheloretteParty"}>Девичник</MenuItem>
+                  <MenuItem value={"forMen"}>Мужчине</MenuItem>
+                  <MenuItem value={"forWomen"}>Женщине</MenuItem>
+                  <MenuItem value={"forGirl"}>Девочке</MenuItem>
+                  <MenuItem value={"forBoy"}>Мальчику</MenuItem>
+                  <MenuItem value={"photozones"}>Фотозоны</MenuItem>
+                  <MenuItem value={"balloonBunches"}>Связки шаров</MenuItem>
+                  <MenuItem value={"latexBalloons"}>Латексные шары</MenuItem>
+                  <MenuItem value={"hearts"}>Сердца</MenuItem>
+                  <MenuItem value={"stars"}>Звезды</MenuItem>
+                  <MenuItem value={"numbers"}>Цифры</MenuItem>
+                  <MenuItem value={"figures"}>Фигуры</MenuItem>
+                  <MenuItem value={"surpriseBox"}>Коробка - сюрприз</MenuItem>
+                  <MenuItem value={"walkingFigures"}>Ходячие фигуры</MenuItem>
+
                 </Select>
               </FormControl>
               <FormControl fullWidth>
