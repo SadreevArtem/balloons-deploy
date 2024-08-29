@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Socials } from "../Socials/Socials";
 import { inter } from "@/pages";
-import { CATALOG, CategoriesMap } from "@/shared/static";
+import { CATALOG, CATALOG_FOOTER_PURPOSE, CATALOG_FOOTER_WHO, CategoriesMapsFooter } from "@/shared/static";
 
 export const Footer: React.FC = () => {
   return (
@@ -53,7 +53,13 @@ export const Footer: React.FC = () => {
           </div>
           <div className="text-primary flex flex-col">
             <h5 className="font-extrabold mb-3">ДЛЯ КОГО</h5>
-            {CATALOG.map((item) => (
+            {CATALOG_FOOTER_WHO.map((item) => (
+              <Link href={item.href} key={item.id}>
+                <span>{item.name}</span>
+              </Link>
+            ))}
+            <h5 className="font-extrabold mb-3 mt-2">ПОВОД</h5>
+            {CATALOG_FOOTER_PURPOSE.map((item) => (
               <Link href={item.href} key={item.id}>
                 <span>{item.name}</span>
               </Link>
@@ -63,7 +69,7 @@ export const Footer: React.FC = () => {
             <Link href={"/category"}>
               <h5 className="font-extrabold uppercase mb-3">Категории шаров</h5>
             </Link>
-            {CategoriesMap.map((item) => (
+            {CategoriesMapsFooter.map((item) => (
               <Link href={`/category/${item.categoryName}`} key={item.id}>
                 <span>{item.title}</span>
               </Link>

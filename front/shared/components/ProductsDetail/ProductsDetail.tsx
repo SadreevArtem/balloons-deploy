@@ -205,14 +205,8 @@ uploadImageMutation.mutate( image as File );
                   <MenuItem value={"forGirl"}>Девочке</MenuItem>
                   <MenuItem value={"forBoy"}>Мальчику</MenuItem>
                   <MenuItem value={"photozones"}>Фотозоны</MenuItem>
-                  <MenuItem value={"balloonBunches"}>Связки шаров</MenuItem>
-                  <MenuItem value={"latexBalloons"}>Латексные шары</MenuItem>
-                  <MenuItem value={"hearts"}>Сердца</MenuItem>
-                  <MenuItem value={"stars"}>Звезды</MenuItem>
-                  <MenuItem value={"numbers"}>Цифры</MenuItem>
-                  <MenuItem value={"figures"}>Фигуры</MenuItem>
                   <MenuItem value={"surpriseBox"}>Коробка - сюрприз</MenuItem>
-                  <MenuItem value={"walkingFigures"}>Ходячие фигуры</MenuItem>
+                  <MenuItem value={"boxBarbie"}>Коробка BARBIE</MenuItem>
                   <MenuItem value={"ballsCeil"}>Шары на потолок</MenuItem>
                 </Select>
               </FormControl>

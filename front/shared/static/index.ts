@@ -7,12 +7,6 @@ export const MetaData = {
 
 export const CATEGORIES = [
   {
-    id: 1,
-    name: "Акции",
-    image: "images/categories/category.jpeg",
-    href: "/sales",
-  },
-  {
     id: 2,
     name: "На выписку",
     image: "images/categories/out.jpg",
@@ -61,42 +55,6 @@ export const CATEGORIES = [
     href: "/photozones",
   },
   {
-    id: 10,
-    name: "Связки шаров",
-    image: "images/categories/balloon-bunches.jpg",
-    href: "/balloon-bunches",
-  },
-  {
-    id: 11,
-    name: "Латексные шары",
-    image: "images/categories/latex-balloons.jpg",
-    href: "/latex-balloons",
-  },
-  {
-    id: 12,
-    name: "Сердца",
-    image: "images/categories/hearts.jpg",
-    href: "/hearts",
-  },
-  {
-    id: 13,
-    name: "Звезды",
-    image: "images/categories/stars.jpg",
-    href: "/stars",
-  },
-  {
-    id: 14,
-    name: "Цифры",
-    image: "images/categories/numbers.jpg",
-    href: "/numbers",
-  },
-  {
-    id: 15,
-    name: "Фигуры",
-    image: "images/categories/figures.jpg",
-    href: "/figures",
-  },
-  {
     id: 16,
     name: "Коробка - сюрприз",
     image: "images/categories/surprise-box.jpg",
@@ -104,9 +62,9 @@ export const CATEGORIES = [
   },
   {
     id: 17,
-    name: "Ходячие фигуры",
-    image: "images/categories/walking-figures.jpg",
-    href: "/walking-figures",
+    name: "Коробка BARBIE",
+    image: "images/categories/box-barbie.jpg",
+    href: "/box-barbie",
   },
   {
     id: 18,
@@ -118,11 +76,6 @@ export const CATEGORIES = [
 
 
 export const CATALOG = [
-  {
-    id: 1,
-    name: "Акции",
-    href: "/sales",
-  },
   {
     id: 2,
     name: "На выписку",
@@ -164,49 +117,59 @@ export const CATALOG = [
     href: "/photozones",
   },
   {
-    id: 10,
-    name: "Связки шаров",
-    href: "/balloon-bunches",
-  },
-  {
-    id: 11,
-    name: "Латексные шары",
-    href: "/latex-balloons",
-  },
-  {
-    id: 12,
-    name: "Сердца",
-    href: "/hearts",
-  },
-  {
-    id: 13,
-    name: "Звезды",
-    href: "/stars",
-  },
-  {
-    id: 14,
-    name: "Цифры",
-    href: "/numbers",
-  },
-  {
-    id: 15,
-    name: "Фигуры",
-    href: "/figures",
-  },
-  {
     id: 16,
     name: "Коробка - сюрприз",
     href: "/surprise-box",
   },
   {
     id: 17,
-    name: "Ходячие фигуры",
-    href: "/walking-figures",
+    name: "Коробка BARBIE",
+    href: "/box-barbie",
   },
   {
     id: 18,
     name: "Шары на потолок",
     href: "/balls-ceil",
+  },
+];
+export const CATALOG_FOOTER_PURPOSE = [
+  {
+    id: 2,
+    name: "На выписку",
+    href: "/discharge",
+  },
+  {
+    id: 3,
+    name: "Гендер - пати",
+    href: "/gender-party",
+  },
+  {
+    id: 4,
+    name: "Девичник",
+    href: "/bachelorette-party",
+  },
+];
+
+export const CATALOG_FOOTER_WHO = [
+  {
+    id: 5,
+    name: "Мужчине",
+    href: "/for-men",
+  },
+  {
+    id: 6,
+    name: "Женщине",
+    href: "/for-women",
+  },
+  {
+    id: 7,
+    name: "Девочке",
+    href: "/for-girl",
+  },
+  {
+    id: 8,
+    name: "Мальчику",
+    href: "/for-boy",
   },
 ];
 
@@ -229,6 +192,18 @@ export const CategoriesMap = [
   { id: 15, categoryName: 'Bubbles', title: 'Баблс' },
   { id: 16, categoryName: 'BalloonFountains', title: 'Фонтаны из шаров' },
   { id: 17, categoryName: 'RainBalloon', title: 'Шары с дождиком' },
+];
+
+export const CategoriesMapsFooter = [
+  { id: 1, categoryName: 'Photozone', title: 'Фотозона' },
+  { id: 2, categoryName: 'LatexBalloons', title: 'Латексные шары' },
+  { id: 3, categoryName: 'Figures', title: 'Фигуры' },
+  { id: 4, categoryName: 'Numbers', title: 'Цифры' },
+  { id: 5, categoryName: 'Star', title: 'Звезда' },
+  { id: 6, categoryName: 'Heart', title: 'Сердце' },
+  { id: 7, categoryName: 'SurpriseBox', title: 'Коробка - сюрприз' },
+  { id: 8, categoryName: 'WalkingFigures', title: 'Ходячие фигуры' },
+  { id: 9, categoryName: 'BalloonBunches', title: 'Связки шаров' },
 ];
 
 
@@ -340,6 +315,32 @@ export const reviews = [
     user: {
       work: "",
       image: "/images/avatar5.jpeg",
+      lastName: "",
+      firstName: "Дарья",
+    },
+  },
+  {
+    id: 6,
+    published: true,
+    content: "content",
+    text: "Спасибо большое за ваше искусство и профессионализм! Украшение воздушными шарами сделало наше мероприятие незабываемым. Особенно порадовало то, как вы учли все наши пожелания и предложили интересные решения. Шары были потрясающими, а праздник - ярким и радостным. Обязательно будем обращаться к вам снова!",
+    rating: 5,
+    user: {
+      work: "",
+      image: "/images/avatar6.jpeg",
+      lastName: "",
+      firstName: "Дарья",
+    },
+  },
+  {
+    id: 6,
+    published: true,
+    content: "content",
+    text: "Спасибо большое за ваше искусство и профессионализм! Украшение воздушными шарами сделало наше мероприятие незабываемым. Особенно порадовало то, как вы учли все наши пожелания и предложили интересные решения. Шары были потрясающими, а праздник - ярким и радостным. Обязательно будем обращаться к вам снова!",
+    rating: 5,
+    user: {
+      work: "",
+      image: "/images/avatar7.jpeg",
       lastName: "",
       firstName: "Дарья",
     },

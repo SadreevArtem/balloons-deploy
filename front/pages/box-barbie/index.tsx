@@ -7,21 +7,21 @@ import { Header } from "@/shared/components/Header/Header";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
-const Stars = () => {
+const BoxBarbie = () => {
   return (
     <>
-      <AppHead title="Звезды" description="" />
+      <AppHead title="Коробка BARBIE" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-4">
-          <PageProducts title="Звезды" category="stars" className="md:mt-[60px] mt-[46px]" />
+          <PageProducts title="Коробка BARBIE" category="boxBarbie" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>
     </>
   );
 };
 
-Stars.getLayout = function getLayout(page: ReactElement) {
+BoxBarbie.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
       {page}
@@ -30,4 +30,4 @@ Stars.getLayout = function getLayout(page: ReactElement) {
 }
 
 
-export default Stars;
+export default BoxBarbie;

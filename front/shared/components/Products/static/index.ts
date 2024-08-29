@@ -7,14 +7,8 @@ export type CategoryName =
   | "forGirl"
   | "forBoy"
   | "photozones"
-  | "balloonBunches"
-  | "latexBalloons"
-  | "hearts"
-  | "stars"
-  | "numbers"
-  | "figures"
   | "surpriseBox"
-  | "walkingFigures"
+  | "boxBarbie"
   | "ballsCeil"
   | "all"
   | "";
@@ -73,46 +67,16 @@ export const category: Category[] = [
     },
     {
       id: 10,
-      categoryName: "balloonBunches",
-      value: "Связки шаров",
-    },
-    {
-      id: 11,
-      categoryName: "latexBalloons",
-      value: "Латексные шары",
-    },
-    {
-      id: 12,
-      categoryName: "hearts",
-      value: "Сердца",
-    },
-    {
-      id: 13,
-      categoryName: "stars",
-      value: "Звезды",
-    },
-    {
-      id: 14,
-      categoryName: "numbers",
-      value: "Цифры",
-    },
-    {
-      id: 15,
-      categoryName: "figures",
-      value: "Фигуры",
-    },
-    {
-      id: 16,
       categoryName: "surpriseBox",
       value: "Коробка - сюрприз",
     },
     {
-      id: 17,
-      categoryName: "walkingFigures",
-      value: "Ходячие фигуры",
+      id: 11,
+      categoryName: "boxBarbie",
+      value: "Коробка BARBIE",
     },
     {
-      id: 18,
+      id: 12,
       categoryName: "ballsCeil",
       value: "Шары на потолок",
     },

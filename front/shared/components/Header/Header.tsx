@@ -10,6 +10,7 @@ import clsx from "clsx";
 import { useFavoriteStore } from "@/shared/stores/favoriteStore";
 import { useCartStore } from "@/shared/stores/cartStore";
 import { HeaderSearch } from "../HeaderSearch";
+import Image from "next/image";
 
 export const Header: React.FC = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -29,14 +30,21 @@ export const Header: React.FC = () => {
     >
       <div className={"container flex items-center justify-between min-h-6"}>
         <Link href="/" className="relative block shrink-0">
-          <div className="flex flex-col items-center">
+        <Image
+              src="/images/logo_barballs.svg"
+              alt="logo"
+              width={130}
+              height={100}
+              className=" max-md:h-[80px] relative"
+            />
+          {/* <div className="flex flex-col items-center">
             <span className="md:text-2xl text-xl-2 text-primary font-extrabold">
               Barballs72
             </span>
             <span className="md:text-[10px] text-[8px] text-primary uppercase">
               студия воздушного декора
             </span>
-          </div>
+          </div> */}
         </Link>
         <nav className="flex items-center gap-4">
           <ul className="flex md:gap-4 gap-2 items-center">
@@ -62,6 +70,11 @@ export const Header: React.FC = () => {
                 <div className={clsx('absolute top-[-3px] right-[-10px] rounded-[50%] w-4 h-4 bg-red-400 text-[12px] text-center text-white flex items-center justify-center',{ hidden: cartCount < 1 })}>
                   <span className="block">{cartCount}</span>
                 </div>
+              </Link>
+            </li>
+            <li>
+              <Link className="header-link relative" href={`tel:+79088791922`}>
+                <AppIcon type="phone" />
               </Link>
             </li>
             <li className={`self-center ml-6 ${inter.className} max-md:hidden`}>

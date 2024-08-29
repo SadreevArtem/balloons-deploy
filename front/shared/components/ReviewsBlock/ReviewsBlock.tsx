@@ -53,7 +53,7 @@ export const ReviewsBlock: React.FC<Props> = ({
         containerClassName='md:container'
         slideClassName='pb-3 !w-[260px] md:!w-[348px]'
         items={reviews}
-        itemsSlideSlot={(item: TReviews) => <ReviewCard item={item} rating={rating} />}
+        itemsSlideSlot={(item: TReviews) => <ReviewCard item={item} />}
         prevEl={prevEl}
         nextEl={nextEl}
         slidesPerView='auto'
