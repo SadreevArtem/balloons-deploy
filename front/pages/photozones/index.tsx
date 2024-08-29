@@ -13,7 +13,7 @@ const Photozones = () => {
       <AppHead title="Фотозоны" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className="md:mt-[60px] mt-4">
+        <div className="md:mt-[60px] mt-16">
           <PageProducts title="Фотозоны" category="photozones" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>

@@ -13,7 +13,7 @@ const BallsCeil = () => {
       <AppHead title="Шары на потолок" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className="md:mt-[60px] mt-4">
+        <div className="md:mt-[60px] mt-16">
           <PageProducts title="Шары на потолок" category="ballsCeil" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>

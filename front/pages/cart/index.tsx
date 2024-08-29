@@ -14,7 +14,7 @@ const Cart = () => {
       <AppHead title='Корзина' description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className="md:mt-[60px] mt-4">
+        <div className="md:mt-[60px] mt-16">
           <CartComponent title="Оформление заказа" className="md:mt-[60px] mt-[46px]"/>
         </div>
       </div>

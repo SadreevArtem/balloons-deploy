@@ -13,7 +13,7 @@ const Favourite = () => {
       <AppHead title="Избраное" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className="md:mt-[60px] mt-4">
+        <div className="md:mt-[60px] mt-16">
           <FavouriteComponent title="Избраное" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>

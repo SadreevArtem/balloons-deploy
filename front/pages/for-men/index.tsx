@@ -13,7 +13,7 @@ const Men = () => {
       <AppHead title="Мужчине" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className="md:mt-[60px] mt-4">
+        <div className="md:mt-[60px] mt-16">
           <PageProducts title="Мужчине" category="forMen" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>
