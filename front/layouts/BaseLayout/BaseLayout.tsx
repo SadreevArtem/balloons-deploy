@@ -1,6 +1,5 @@
 import { AppToast } from "@/shared/components/AppToast";
 import { Footer } from "@/shared/components/Footer/Footer";
-import { Header } from "@/shared/components/Header/Header";
 import React from "react";
 
 

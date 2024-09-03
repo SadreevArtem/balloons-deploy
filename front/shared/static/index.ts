@@ -32,7 +32,7 @@ export const CATEGORIES = [
   },
   {
     id: 6,
-    name: "Женщине",
+    name: "Девушке",
     image: "images/categories/for-women.jpg",
     href: "/for-women",
   },
@@ -98,7 +98,7 @@ export const CATALOG = [
   },
   {
     id: 6,
-    name: "Женщине",
+    name: "Девушке",
     href: "/for-women",
   },
   {
@@ -158,7 +158,7 @@ export const CATALOG_FOOTER_WHO = [
   },
   {
     id: 6,
-    name: "Женщине",
+    name: "Девушке",
     href: "/for-women",
   },
   {

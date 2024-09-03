@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
             </li>
             <li>
               <Link className="header-link relative" href={`tel:+79088791922`}>
-                <AppIcon type="phone" />
+                <AppIcon type="phone" className="text-primary" />
               </Link>
             </li>
             <li className={`self-center ml-6 ${inter.className} max-md:hidden`}>

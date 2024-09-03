@@ -21,6 +21,13 @@ const Home = ()=> {
           images={[
             { url: "/images/banner.jpg" },
             { url: "/images/banner2.jpg" },
+            { url: "/images/banner3.jpg" },
+            { url: "/images/banner4.jpg" },
+            { url: "/images/banner5.jpg" },
+            { url: "/images/banner6.jpg" },
+            { url: "/images/banner7.jpg" },
+            { url: "/images/banner8.jpg" },
+            { url: "/images/banner9.jpg" },
           ]}
         />
         <div className="md:mt-[60px] mt-4">

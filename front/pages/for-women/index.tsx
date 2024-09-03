@@ -10,11 +10,11 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const ForWomen = () => {
   return (
     <>
-      <AppHead title="Женщине" description="" />
+      <AppHead title="Девушке" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">
-          <PageProducts title="Женщине" category="forWomen" className="md:mt-[60px] mt-[46px]" />
+          <PageProducts title="Девушке" category="forWomen" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>
     </>

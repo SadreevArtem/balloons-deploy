@@ -48,7 +48,7 @@ export const category: Category[] = [
     {
       id: 6,
       categoryName: "forWomen",
-      value: "Женщине",
+      value: "Девушке",
     },
     {
       id: 7,

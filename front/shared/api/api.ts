@@ -60,7 +60,6 @@ class API {
     );
   }
   searchProducts = (query: string) => {
-    console.log(JSON.stringify({ query }));
 
     return fetch(`${this.baseUrl}/products/search`, {
       method: "POST",

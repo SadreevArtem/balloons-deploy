@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
@@ -52,6 +53,7 @@ export const Author: FC<BannerProps> = ({ images }) => {
           </SwitchTransition>
         </div>
       </div>
+      <Link className="absolute bottom-[36px] md:bottom-[72px] bg-white opacity-75 rounded-[80px] text-primary md:text-2xl text-lg md:px-16 px-8 md:py-3 py-2 left-1/2 transform -translate-x-1/2" href={"/catalog"}>Каталог</Link>
     </div>
   );
 };
