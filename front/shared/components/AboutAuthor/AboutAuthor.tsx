@@ -38,9 +38,10 @@ export const AboutAuthor: React.FC = ()=>{
             </div>
           </div>
           <div className="w-[50%] ml-[60px] pt-[100px] max-md:pt-[45px] max-md:ml-[20px] max-md:w-full">
-            <h1 className="text-primary md:text-[80px] max-md:text-xl max-md:mb-2">
+            <h1 className="opacity-0 text-[1px]">Воздушные шары в Тюмени</h1>
+            <h2 className="text-primary md:text-[80px] max-md:text-xl max-md:mb-2">
               {"BARBALLS 72"}
-            </h1>
+            </h2>
             <div className="pl-4 text-lg flex flex-col gap-2 max-md:text-base w-full">
               <p className="text-primary block text-lg font-extrabold">
                 {

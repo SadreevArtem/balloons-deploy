@@ -14,7 +14,7 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Home = ()=> {
   return (
     <>
-      <AppHead title={MetaData.title} description={MetaData.description} />
+      <AppHead title={MetaData.title} description={MetaData.description} keywords={MetaData.keywords}/>
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <Author

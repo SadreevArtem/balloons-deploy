@@ -15,6 +15,7 @@ export const CatalogComponent: React.FC<Props> = ({title, className, catalog}) =
   return (
     <>
       <section className={`w-full flex flex-col py-4 ${inter.className, className} bg-[#f7f7f7] ${styles.wrapper} min-h-[60vh] max-md:mb-12`}>
+        <h1 className="opacity-0 text-[1px]">Воздушные шары Тюмень</h1>
         <h3 className="container self-center text-center text-primary md:text-5xl text-2xl font-extrabold mb-6">{title}</h3>
         <ul className="container py-4 grid md:grid-cols-6 grid-cols-2 gap-6 md:gap-8 ">
             {catalog.map((category)=> <CategoryCard item={category} key={category.name}/>)}
