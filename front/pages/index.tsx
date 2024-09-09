@@ -14,7 +14,7 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Home = ()=> {
   return (
     <>
-      <AppHead title={MetaData.title} description={MetaData.description} keywords={MetaData.keywords}/>
+      <AppHead title={MetaData.title} description={MetaData.description} keywords={MetaData.keywords} image={"/apple-touch-icon.png"}/>
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <Author
