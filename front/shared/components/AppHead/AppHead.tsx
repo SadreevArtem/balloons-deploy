@@ -51,7 +51,7 @@ export const AppHead: React.FC<React.PropsWithChildren<Props>> = ({
       <meta name="msapplication-TileColor" content="#da532c"></meta>
       <meta name="theme-color" content="#ffffff"></meta>
       <meta property="og:url" content="https://barballs72.ru/" />
-      <link rel="canonical" href="https://barballs72.ru/" />
+      {/* <link rel="canonical" href="https://barballs72.ru/" /> */}
       {image && <meta property="og:image" content={image} />}
       {children}
     </Head>

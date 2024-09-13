@@ -5,14 +5,14 @@ import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { Header } from "@/shared/components/Header/Header";
 import { AboutAuthor } from "@/shared/components/AboutAuthor/AboutAuthor";
 import { AppAccordionGroup } from "@/shared/components/AppAccordionGroup/AppAccordionGroup";
-import { accordeonItems } from "@/shared/static";
+import { accordeonItems, MetaData } from "@/shared/static";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
 const About = () => {
   return (
     <>
-      <AppHead title="О нас | Воздушные и гелиевые шары в Тюмени с быстрой доставкой" description="" />
+      <AppHead title="О нас | Воздушные и гелиевые шары в Тюмени с быстрой доставкой" description={MetaData.description} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">
