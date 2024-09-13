@@ -29,7 +29,7 @@ const ProductDetailClient = () => {
     if (!id ) return null;
   return (
     <>
-      <AppHead title={MetaData.title} description={MetaData.description} />
+      <AppHead title={"BarBalls72 Воздушные шары с доставкой"} description={""} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
       <div className={`h-[100vh]${inter.className}`}>
