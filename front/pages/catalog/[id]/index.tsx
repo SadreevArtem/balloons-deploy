@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import { useRouter } from "next/router";
 import { DetailProductsClient } from "@/shared/components/DetailProductsClient/DetailProductsClient";
 import { Header } from "@/shared/components/Header/Header";
+import { MetaData } from "@/shared/static";
 ;
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
@@ -28,7 +29,7 @@ const ProductDetailClient = () => {
     if (!id ) return null;
   return (
     <>
-      <AppHead title={''} description="" />
+      <AppHead title={MetaData.title} description={MetaData.description} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
       <div className={`h-[100vh]${inter.className}`}>
