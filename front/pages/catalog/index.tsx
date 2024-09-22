@@ -11,9 +11,10 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Catalog = ()=> {
   return (
     <>
-      <AppHead title='Каталог | Воздушные шарики — купить гелиевые шары в Тюмени с доставкой' description={MetaData.description} keywords="Воздушные, шарики, Тюмень, доставка, купить, гелиевый, заказать, недорого, микс, большие" />
+      <AppHead title='Шарики на день рождения в Тюмени Barballs72' description={MetaData.description} keywords="Воздушные, шарики, Тюмень, доставка, купить, гелиевый, заказать, недорого, микс, большие" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
+        <h1 className="text-[1px] opacity-5">шары на день рождения заказать в Тюмени</h1>
         <div className="md:mt-[60px] mt-16">
           <CatalogComponent catalog={CATALOG} title="Каталог" className="md:mt-[60px] mt-[46px]"/>
         </div>

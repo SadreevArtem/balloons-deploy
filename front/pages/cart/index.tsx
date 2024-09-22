@@ -11,11 +11,16 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Cart = () => {
   return (
     <>
-      <AppHead title='Корзина' description="" />
+      <AppHead title="Корзина" description="">
+        <meta name="robots" content="noindex" />
+      </AppHead>
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">
-          <CartComponent title="Оформление заказа" className="md:mt-[60px] mt-[46px]"/>
+          <CartComponent
+            title="Оформление заказа"
+            className="md:mt-[60px] mt-[46px]"
+          />
         </div>
       </div>
     </>

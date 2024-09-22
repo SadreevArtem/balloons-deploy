@@ -4,15 +4,17 @@ import { ReactElement } from "react";
 import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { PageProducts } from "@/shared/components/PageProducts/PageProducts";
 import { Header } from "@/shared/components/Header/Header";
+import { MetaData } from "@/shared/static";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
 const BoxBarbie = () => {
   return (
     <>
-      <AppHead title="Коробка BARBIE" description="" />
+      <AppHead title="Надувные шары в Тюмени Barballs72" description={MetaData.description} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
+        <h1 className="text-[1px] opacity-5">оформление праздников надувными шарами</h1>
         <div className="md:mt-[60px] mt-16">
           <PageProducts title="Коробка BARBIE" category="boxBarbie" className="md:mt-[60px] mt-[46px]" />
         </div>

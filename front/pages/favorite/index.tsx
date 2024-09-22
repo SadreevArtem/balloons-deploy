@@ -10,11 +10,16 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Favourite = () => {
   return (
     <>
-      <AppHead title="Избраное" description="" />
+      <AppHead title="Избраное" description="">
+        <meta name="robots" content="noindex" />
+      </AppHead>
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">
-          <FavouriteComponent title="Избраное" className="md:mt-[60px] mt-[46px]" />
+          <FavouriteComponent
+            title="Избраное"
+            className="md:mt-[60px] mt-[46px]"
+          />
         </div>
       </div>
     </>

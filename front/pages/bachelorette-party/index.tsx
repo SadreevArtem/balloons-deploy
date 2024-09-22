@@ -10,9 +10,10 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const BacheloretteParty = () => {
   return (
     <>
-      <AppHead title="Девичник" description="" />
+      <AppHead title="Шарики на девичник в Тюмени Barballs72" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
+        <h1 className="text-[1px] opacity-5">гелиевые шары на девичник</h1>
         <div className="md:mt-[60px] mt-16">
           <PageProducts title="Девичник" category="bacheloretteParty" className="md:mt-[60px] mt-[46px]" />
         </div>

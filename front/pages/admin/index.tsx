@@ -3,6 +3,7 @@ import { AppToast } from "@/shared/components/AppToast";
 import { Login } from "@/shared/components/Login/Login";
 import { useAuthStore } from "@/shared/stores/auth";
 import { Poiret_One } from "next/font/google";
+import Head from "next/head";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
@@ -11,6 +12,9 @@ export default function Admin() {
     const isAuth = !!token;
   return (
     <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <div className={`h-[100vh] ${inter.className}`}>
         {!isAuth ? <Login /> : <AdminPanel title="Управление контентом" />}
       </div>

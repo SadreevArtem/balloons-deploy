@@ -10,7 +10,7 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Delivery = () => {
   return (
     <>
-      <AppHead title="Доставка и оплата" description="" />
+      <AppHead title="Доставка и оплата" description="" showCanonical canonicalUrl="https://barballs72.ru/about"/>
       <Header />
       <div className={`container flex flex-col justify-between ${inter.className}`}>
         <div className="mt-4">

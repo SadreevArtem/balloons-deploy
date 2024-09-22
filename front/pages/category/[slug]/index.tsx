@@ -17,7 +17,7 @@ const CategoryPage = () => {
     if (!slug ) return null;
   return (
     <>
-      <AppHead title="Мужчине" description="" />
+      <AppHead title={`${title} воздушные купить в Тюмени BarBalls72`} description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">

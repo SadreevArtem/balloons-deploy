@@ -25,6 +25,7 @@ export const PageTagProducts: React.FC<Props> = ({title, className, tag}) => {
           (inter.className, className)
         } bg-[#f7f7f7]`}
       >
+        <h1 className="text-[1px] opacity-5">{`${title} с доставкой на дом в Тюмени`}</h1>
         <h3 className="container self-center text-center text-primary md:text-5xl text-2xl font-extrabold mb-6">
           {title}
         </h3>

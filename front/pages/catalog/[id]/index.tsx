@@ -29,7 +29,7 @@ const ProductDetailClient = () => {
     if (!id ) return null;
   return (
     <>
-      <AppHead title={"BarBalls72 Воздушные шары с доставкой"} description={""} />
+      <AppHead title={"BarBalls72 Воздушные шары с доставкой"} description={MetaData.description} showCanonical canonicalUrl="https://barballs72.ru/catalog" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
       <div className={`h-[100vh]${inter.className}`}>
