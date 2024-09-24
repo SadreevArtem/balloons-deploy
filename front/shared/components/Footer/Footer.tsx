@@ -38,6 +38,11 @@ export const Footer: React.FC = () => {
                     name: "social-tg",
                     value: "https://t.me/Barballs72",
                   },
+                  {
+                    id: 2,
+                    name: "viber",
+                    value: "viber://chat?number=%2B79088791922",
+                  },
                 ]}
               />
               <Link

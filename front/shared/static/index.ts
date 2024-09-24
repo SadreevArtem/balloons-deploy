@@ -63,8 +63,8 @@ export const CATEGORIES = [
   },
   {
     id: 17,
-    name: "Коробка BARBIE",
-    image: "images/categories/box-barbie.jpg",
+    name: "Шар в шаре",
+    image: "images/categories/ballinball.jpeg",
     href: "/box-barbie",
   },
   {
@@ -124,7 +124,7 @@ export const CATALOG = [
   },
   {
     id: 17,
-    name: "Коробка BARBIE",
+    name: "Шар в шаре",
     href: "/box-barbie",
   },
   {

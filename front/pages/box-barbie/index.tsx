@@ -16,7 +16,7 @@ const BoxBarbie = () => {
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <h1 className="text-[1px] opacity-5">оформление праздников надувными шарами</h1>
         <div className="md:mt-[60px] mt-16">
-          <PageProducts title="Коробка BARBIE" category="boxBarbie" className="md:mt-[60px] mt-[46px]" />
+          <PageProducts title="Шар в шаре" category="boxBarbie" className="md:mt-[60px] mt-[46px]" />
         </div>
       </div>
     </>

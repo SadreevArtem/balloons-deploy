@@ -72,10 +72,11 @@ export const Header: React.FC = () => {
                 </div>
               </Link>
             </li>
-            <li>
+            <li className="flex">
               <Link className="header-link relative" href={`tel:+79088791922`}>
                 <AppIcon type="phone" className="text-primary" />
               </Link>
+              <p className="font-bold max-md:hidden">+7(908)879-19-22</p>
             </li>
             <li className={`self-center ml-6 ${inter.className} max-md:hidden`}>
               <Menu>

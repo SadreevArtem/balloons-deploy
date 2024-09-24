@@ -206,7 +206,7 @@ uploadImageMutation.mutate( image as File );
                   <MenuItem value={"forBoy"}>Мальчику</MenuItem>
                   <MenuItem value={"photozones"}>Фотозоны</MenuItem>
                   <MenuItem value={"surpriseBox"}>Коробка - сюрприз</MenuItem>
-                  <MenuItem value={"boxBarbie"}>Коробка BARBIE</MenuItem>
+                  <MenuItem value={"boxBarbie"}>Шар в шаре</MenuItem>
                   <MenuItem value={"ballsCeil"}>Шары на потолок</MenuItem>
                 </Select>
               </FormControl>

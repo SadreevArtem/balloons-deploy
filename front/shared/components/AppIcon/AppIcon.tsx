@@ -74,6 +74,10 @@ const Block = dynamic(() => import("./components/Block").then((module) => module
   ssr: false
 });
 
+const Viber = dynamic(() => import("./components/Viber").then((module) => module.Viber), {
+  ssr: false
+});
+
 type Props = {
   type: IconType;
   className?: string;
@@ -97,6 +101,7 @@ const icons: Record<IconType, (className: string) => ReactNode> = {
   "favorite-outlined": (className) => <FavoriteOutlined className={className} />,
   check: (className) => <Check className={className} />,
   block: (className) => <Block className={className} />,
+  viber: (className) => <Viber className={className} />,
 };
 
 export const AppIcon: React.FC<Props> = ({ type, className = ""}) => {

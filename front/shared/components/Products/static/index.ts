@@ -73,7 +73,7 @@ export const category: Category[] = [
     {
       id: 11,
       categoryName: "boxBarbie",
-      value: "Коробка BARBIE",
+      value: "Шар в шаре",
     },
     {
       id: 12,
