@@ -3,6 +3,7 @@ import { Button } from "../Button/Button";
 import Link from "next/link";
 import { AppIcon } from "../AppIcon";
 import { useFavoriteStore } from "@/shared/stores/favoriteStore";
+import { useRouter } from "next/router";
 
 type Props ={
     item: {
@@ -14,6 +15,7 @@ type Props ={
 }
 
 export const ProductCard: React.FC<Props> = ({item}) => {
+  const { asPath } = useRouter();
   const favoriteIds = useFavoriteStore((state) => state.favorite);
   const removeFavorite = useFavoriteStore((state) => state.removeFavorite);
   const addFavorite = useFavoriteStore((state) => state.addFavorite);
@@ -21,6 +23,7 @@ export const ProductCard: React.FC<Props> = ({item}) => {
   const handleFavorite = (id: number) => {
     isInFavourites ? removeFavorite(id) : addFavorite(id);
   };
+  const href = `${asPath.endsWith('/') ? asPath : `${asPath}/`}${item.id}`;
 
   return (
     <>
@@ -40,7 +43,7 @@ export const ProductCard: React.FC<Props> = ({item}) => {
         <span className="text-primary text-lg font-extrabold max-md:px-2">
           {item.currentPrice} руб.
         </span>
-        <Link href={`/catalog/${item.id}`}>
+        <Link href={href}>
           <Button title="Подробнее" />
         </Link>
         <button

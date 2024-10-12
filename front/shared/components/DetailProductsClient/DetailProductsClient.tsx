@@ -4,22 +4,22 @@ import Image from "next/image";
 import { Button } from "../Button";
 import Link from "next/link";
 import { useCartStore } from "@/shared/stores/cartStore";
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@/shared/api/api";
+// import { useQuery } from "@tanstack/react-query";
+// import { api } from "@/shared/api/api";
 
 type Props = {
-    id : number;
+    item : Product;
   }
   
 
-export const DetailProductsClient: React.FC<Props> = ({id}) => {
-  const getProductById = () => api.getProductById(id);
-  const getQueryKey = (id: number) => ['product'].concat(id.toString());
-  const { data: item, isLoading } = useQuery<Product>({
-    queryKey: getQueryKey(id),
-    queryFn: getProductById,
-    enabled: !!id,
-  });
+export const DetailProductsClient: React.FC<Props> = ({item}) => {
+  // const getProductById = () => api.getProductById(id);
+  // const getQueryKey = (id: number) => ['product'].concat(id.toString());
+  // const { data: item, isLoading } = useQuery<Product>({
+  //   queryKey: getQueryKey(id),
+  //   queryFn: getProductById,
+  //   enabled: !!id,
+  // });
     const addCart = useCartStore((state) => state.addCart);
     const addCartHandler = () => addCart(item as Product);
     return (
