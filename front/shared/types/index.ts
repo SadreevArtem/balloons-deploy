@@ -23,3 +23,10 @@ export type FilesModel = {
   filename: string,
   path: string,
 }
+
+export type FaqType = {
+  id: number;
+  name: string;
+  anchor: string;
+  answer: string;
+}

@@ -58,7 +58,7 @@ export const DetailProductsClient: React.FC<Props> = ({id}) => {
               {item?.name}
             </h1>
             <div className="pl-4 text-lg flex flex-col gap-2 max-md:text-base w-full">
-              <p className="text-primary block whitespace-pre">{item?.description}</p>
+              <p className="text-primary block break-normal ">{item?.description}</p>
               <div className="flex md:mt-8 w-full md:gap-32 gap-24 items-center">
                 <span className="text-primary text-lg font-extrabold">
                   {item?.currentPrice} руб.

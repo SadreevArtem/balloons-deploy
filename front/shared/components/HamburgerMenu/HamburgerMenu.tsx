@@ -3,6 +3,7 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import { useRouter } from "next/router";
 import { HeaderMenuItem } from "../Hamburger/static";
+import { HeaderSearch } from "../HeaderSearch";
 
 type Props = {
   menu: HeaderMenuItem[];
@@ -18,9 +19,9 @@ export const HamburgerMenu: React.FC<Props> = ({ menu, onClose, className = "" }
   return (
     <div className={clsx("fixed z-40 top-[68px] right-0 left-0 bottom-0 bg-white opacity-90", className)}>
       <div className='container max-h-full pt-1 pb-3 overflow-y-auto'>
-
+        <HeaderSearch className="pt-4"/>
         <nav>
-          <ul className="pt-4">
+          <ul className="pt-1">
             <li
               className={clsx(listItemClassName, {
                 "bg-bgOpacity": paths[1] === ""

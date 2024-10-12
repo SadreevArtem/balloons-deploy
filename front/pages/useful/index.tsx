@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { Header } from "@/shared/components/Header/Header";
 import Link from "next/link";
+import { Categories } from "@/shared/components/Categories";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
@@ -40,6 +41,9 @@ const Useful = () => {
               >
                 Перейти в каталог
               </Link>
+              <div className="md:mt-[60px] mt-4">
+          <Categories />
+        </div>
             </div>
           </div>
         </div>

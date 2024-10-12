@@ -62,7 +62,7 @@ export const AppAccordion: React.FC<Props> = ({
         {...(open ? { "aria-controls": controlId } : {})}
         onClick={() => setOpen(!open)}
       >
-        <span
+        <h3
           className={clsx(
             "font-sans-inter text-primary text-lg whitespace-break-spaces",
             {
@@ -71,7 +71,7 @@ export const AppAccordion: React.FC<Props> = ({
           )}
         >
           {title}
-        </span>
+        </h3>
         <span
           className={clsx(
             "w-[24px] h-[12px] shrink-0 bg-dropdown-arrow bg-no-repeat bg-center transition-transform",

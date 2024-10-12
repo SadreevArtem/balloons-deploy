@@ -34,7 +34,7 @@ export const ProductCard: React.FC<Props> = ({item}) => {
           className=" w-[220px] md:h-[300px] h-[200px] rounded-t-[10px]"
         />
 
-        <span className="text-primary md:text-lg font-extrabold max-md:px-2">
+        <span className="text-primary md:text-lg font-extrabold max-md:px-2 overflow-hidden">
           {item.name}
         </span>
         <span className="text-primary text-lg font-extrabold max-md:px-2">
