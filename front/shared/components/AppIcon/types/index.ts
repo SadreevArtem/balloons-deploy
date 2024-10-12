@@ -15,4 +15,5 @@ export type IconType =
   | "check"
   | "block"
   | "favorite-outlined"
-  | "viber";
+  | "viber"
+  | "wa";

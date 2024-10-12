@@ -78,6 +78,10 @@ const Viber = dynamic(() => import("./components/Viber").then((module) => module
   ssr: false
 });
 
+const Wa = dynamic(() => import("./components/Wa").then((module) => module.Wa), {
+  ssr: false
+});
+
 type Props = {
   type: IconType;
   className?: string;
@@ -102,6 +106,7 @@ const icons: Record<IconType, (className: string) => ReactNode> = {
   check: (className) => <Check className={className} />,
   block: (className) => <Block className={className} />,
   viber: (className) => <Viber className={className} />,
+  wa: (className) => <Wa className={className} />,
 };
 
 export const AppIcon: React.FC<Props> = ({ type, className = ""}) => {

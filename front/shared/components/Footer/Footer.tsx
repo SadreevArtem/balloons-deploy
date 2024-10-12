@@ -39,9 +39,14 @@ export const Footer: React.FC = () => {
                     value: "https://t.me/Barballs72",
                   },
                   {
-                    id: 2,
+                    id: 3,
                     name: "viber",
                     value: "viber://chat?number=%2B79088791922",
+                  },
+                  {
+                    id: 4,
+                    name: "wa",
+                    value: "https://wa.me/79088791922",
                   },
                 ]}
               />
