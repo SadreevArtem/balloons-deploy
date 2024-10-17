@@ -49,4 +49,7 @@ body {
   * {
     @apply supports-[-webkit-backdrop-filter]:outline-none outline-none;
   }
+  .sr-only {
+    @apply absolute w-[1px] h-[1px] p-0 m-[-1px] overflow-hidden  border-0; 
+  }
 }
