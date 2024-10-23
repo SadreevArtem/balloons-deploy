@@ -27,8 +27,8 @@ const Home = () => {
           images={[
             // { url: "/images/banner.jpg" },
             // { url: "/images/banner2.jpg" },
-            { url: "/images/banner4.jpg" },
-            { url: "/images/banner3.jpg" },
+            { url: "/images/banner4.jpeg" },
+            { url: "/images/banner3.jpeg" },
             // { url: "/images/banner5.jpg" },
             // { url: "/images/banner6.jpg" },
             // { url: "/images/banner7.jpg" },
