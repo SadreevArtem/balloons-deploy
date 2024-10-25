@@ -13,7 +13,7 @@ export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 const Discharge = () => {
   return (
     <>
-      <AppHead title="Шарики на выписку из роддома в Тюмени Barballs72" description={MetaData.description} />
+      <AppHead title="Воздушные шарики на выписку из роддома в Тюмени Barballs72" description={MetaData.description} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <h1 className="text-[1px] opacity-5">воздушные шары на выписку из роддома в Тюмени</h1>
