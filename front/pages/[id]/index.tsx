@@ -42,7 +42,7 @@ const ProductDetailClient = ({ item }: { item: any }) => {
       <AppHead title={`${item.name} - Воздушные шары BarBalls72`} description={item.description.slice(0, 150)} />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
-        <div className={`h-[100vh] ${inter.className}`}>
+        <div className={`${inter.className}`}>
           <DetailProductsClient item={item} />
         </div>
       </div>

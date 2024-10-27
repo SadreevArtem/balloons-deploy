@@ -30,13 +30,13 @@ export const Header: React.FC = () => {
     >
       <div className={"container flex items-center justify-between min-h-6"}>
         <Link href="/" className="relative block shrink-0">
-        <Image
-              src="/images/logo_barballs.svg"
-              alt="logo"
-              width={130}
-              height={100}
-              className=" max-md:h-[80px] relative"
-            />
+          <Image
+            src="/images/logo_barballs.svg"
+            alt="logo"
+            width={130}
+            height={100}
+            className=" max-md:h-[80px] relative"
+          />
           {/* <div className="flex flex-col items-center">
             <span className="md:text-2xl text-xl-2 text-primary font-extrabold">
               Barballs72
@@ -53,21 +53,32 @@ export const Header: React.FC = () => {
                 className="header-link"
                 onClick={() => scrolltoHash("price")}
               >
-                <HeaderSearch className="max-md:hidden"/>
+                <HeaderSearch className="max-md:hidden" />
               </div>
             </li>
             <li>
-              <Link className="header-link relative" href="/favorite">
+              <Link className="header-link relative inline-block" href="/favorite">
                 <AppIcon type="favorite" />
-                <div className={clsx({ hidden: favoriteCount < 1 }, 'absolute top-[-3px] right-[-10px] rounded-[50%] w-4 h-4 bg-red-400 text-[12px] text-center text-white flex items-center justify-center')}>
-                  <span className="block">{favoriteCount}</span>
+                <div
+                  className={clsx(
+                    { hidden: favoriteCount < 1 },
+                    "absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 rounded-full w-4 h-4 bg-red-400 text-[12px] text-center text-white flex items-center justify-center"
+                  )}
+                >
+                  <span className="">{favoriteCount}</span>
                 </div>
               </Link>
             </li>
+
             <li>
-              <Link className="header-link relative" href="/cart">
+              <Link className="header-link relative inline-block" href="/cart">
                 <AppIcon type="cart" />
-                <div className={clsx('absolute top-[-3px] right-[-10px] rounded-[50%] w-4 h-4 bg-red-400 text-[12px] text-center text-white flex items-center justify-center',{ hidden: cartCount < 1 })}>
+                <div
+                  className={clsx(
+                    "absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 rounded-full w-4 h-4 bg-red-400 text-[12px] text-center text-white flex items-center justify-center",
+                    { hidden: cartCount < 1 }
+                  )}
+                >
                   <span className="block">{cartCount}</span>
                 </div>
               </Link>

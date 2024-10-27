@@ -17,7 +17,7 @@ export const HamburgerMenu: React.FC<Props> = ({ menu, onClose, className = "" }
   const listItemClassName = "mb-1 last:mb-0 py-2 px-4 rounded-2";
 
   return (
-    <div className={clsx("fixed z-40 top-[68px] right-0 left-0 bottom-0 bg-white opacity-90", className)}>
+    <div className={clsx("fixed z-40 top-[104px] right-0 left-0 bottom-0 bg-white opacity-90", className)}>
       <div className='container max-h-full pt-1 pb-3 overflow-y-auto'>
         <HeaderSearch className="pt-4"/>
         <nav>
