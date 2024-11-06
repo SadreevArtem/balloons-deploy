@@ -30,7 +30,7 @@ export const PageProducts: React.FC<Props> = ({title, className, category}) => {
           {title}
         </h3>
         {products?.length > 0 && !isLoading ? (
-          <div className="container py-4 grid md:grid-cols-4 grid-cols-2 gap-8">
+          <div className="container py-4 grid md:grid-cols-4 grid-cols-2 gap-8 place-items-center">
             {products.map((product) => (
               <ProductCard item={product} key={product.name} />
             ))}

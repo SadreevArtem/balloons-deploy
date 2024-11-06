@@ -22,7 +22,7 @@ export const FavouriteComponent: React.FC<Props> = ({title, className}) => {
     <>
       <section className={`w-full flex flex-col py-4 ${inter.className, className} bg-[#f7f7f7]`}>
         <h3 className="container self-center text-center text-primary md:text-5xl text-2xl font-extrabold mb-6">{title}</h3>
-        {favorite.length> 0 && !isLoading ? <div className="container py-4 grid md:grid-cols-4 grid-cols-2 gap-8">
+        {favorite.length> 0 && !isLoading ? <div className="container py-4 grid md:grid-cols-4 grid-cols-2 gap-8 place-items-center">
             {products.map((product)=> <ProductCard item={product} key={product.name}/>)}
         </div> : <div className="container text-center text-gray-600">Вы не добавили ни одного товара в избранное</div>}
       </section>

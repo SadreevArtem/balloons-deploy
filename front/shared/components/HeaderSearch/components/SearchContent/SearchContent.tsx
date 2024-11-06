@@ -68,7 +68,7 @@ export const SearchContent: React.FC<Props> = ({
               title={item.name ?? ""}
               imageUrl={item.image}
               serviceName={""}
-              href={`/catalog/${item.id}`}
+              href={`/${item.id}`}
               onClick={handleClear}
             />
           ))}

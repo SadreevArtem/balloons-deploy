@@ -33,7 +33,7 @@ export const ProductCard: React.FC<Props> = ({ item }) => {
       <article
         itemScope
         itemType="https://schema.org/Product"
-        className="relative max-md:pb-2 shadow-card hover:shadow-cardHover rounded-[10px] flex flex-col md:gap-4 gap-2 items-center shrink-0 bg-[#fafafa] md:w-[220px] md:h-[468px] h-[320px]"
+        className="relative max-md:pb-2 shadow-card hover:shadow-cardHover rounded-[10px] flex flex-col md:gap-4 gap-2 items-center shrink-0 bg-[#fafafa] md:w-full md:h-[468px] h-[320px]"
       >
         <Image
           style={{ objectFit: "cover" }}
@@ -41,7 +41,7 @@ export const ProductCard: React.FC<Props> = ({ item }) => {
           src={item.image}
           width={220}
           height={300}
-          className="w-[220px] md:h-[300px] h-[200px] rounded-t-[10px]"
+          className="w-full md:h-[300px] h-[200px] rounded-t-[10px]"
           itemProp="image"
         />
 
