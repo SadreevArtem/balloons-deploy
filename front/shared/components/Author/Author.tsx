@@ -46,7 +46,7 @@ export const Author: FC<BannerProps> = ({ images }) => {
                 alt=""
                 fill
                 className="w-full"
-                priority={true}
+                priority
                 quality={100}
               />
             </CSSTransition>

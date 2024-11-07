@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
       className={`${inter.className} opacity-75 md:p-4 p-3 header-scroll fixed top-0 z-10 bg-white w-full`}
     >
       <div className={"container flex items-center justify-between min-h-6"}>
-        <Link href="/" className="relative block shrink-0">
+        <Link href="/" className="relative block shrink-0" aria-label="Главная страница">
           <Image
             src="/images/logo_barballs.svg"
             alt="logo"
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
               </div>
             </li>
             <li>
-              <Link className="header-link relative inline-block" href="/favorite">
+              <Link className="header-link relative inline-block" href="/favorite" aria-label="Избраное">
                 <AppIcon type="favorite" />
                 <div
                   className={clsx(
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
             </li>
 
             <li>
-              <Link className="header-link relative inline-block" href="/cart">
+              <Link className="header-link relative inline-block" href="/cart" aria-label="Корзина">
                 <AppIcon type="cart" />
                 <div
                   className={clsx(
@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
               </Link>
             </li>
             <li className="flex">
-              <Link className="header-link relative" href={`tel:+79088791922`}>
+              <Link className="header-link relative" href={`tel:+79088791922`} aria-label="Позвонить">
                 <AppIcon type="phone" className="text-primary" />
               </Link>
               <p className="font-bold max-md:hidden">+7(908)879-19-22</p>
@@ -107,6 +107,7 @@ export const Header: React.FC = () => {
                   <MenuItem>
                     <Link
                       href="/"
+                      aria-label="Главная"
                       className={`group text-lg flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10 ${inter.className}`}
                       onClick={onClose}
                     >
@@ -116,6 +117,7 @@ export const Header: React.FC = () => {
                   {HEADER_MENU.map((item) => (
                     <MenuItem key={item.value}>
                       <Link
+                      aria-label={item.value}
                         href={item.href}
                         className={`group text-lg flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10 ${inter.className}`}
                         onClick={onClose}

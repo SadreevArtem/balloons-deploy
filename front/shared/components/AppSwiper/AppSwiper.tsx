@@ -38,8 +38,8 @@ export const AppSwiper = <T extends { id?: number | null }>({
         modules={[Navigation]}
         {...props}
       >
-        {items?.map((item) => (
-          <SwiperSlide key={item?.id} className={slideClassName}>
+        {items?.map((item, i) => (
+          <SwiperSlide key={`${item.id}`.concat(i.toString())} className={slideClassName}>
             {itemsSlideSlot(item)}
           </SwiperSlide>
         ))}

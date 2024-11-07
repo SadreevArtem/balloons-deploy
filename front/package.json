@@ -17,7 +17,7 @@
     "@tanstack/react-query": "^5.51.21",
     "clsx": "^2.1.1",
     "js-cookie": "^3.0.5",
-    "next": "14.2.3",
+    "next": "^15.0.2",
     "rambda": "^9.2.1",
     "react": "^18",
     "react-dom": "^18",

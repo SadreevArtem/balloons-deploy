@@ -56,7 +56,7 @@ export const AppInputSearch: React.FC<Props> = ({
       />
       <div className='flex items-center gap-3'>
         {withClear && value && (
-          <button onClick={() => onChange("")}>
+          <button aria-label="Поиск" onClick={() => onChange("")}>
             <AppIcon type='close' className='text-primary w-5 h-5' />
           </button>
         )}
