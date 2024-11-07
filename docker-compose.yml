@@ -27,6 +27,8 @@ services:
       - 8080:3000
     networks:
       - frontend
+    depends_on:
+      - backend
   
   db:
     container_name: postgres
