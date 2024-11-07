@@ -5,17 +5,31 @@ import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { PageProducts } from "@/shared/components/PageProducts/PageProducts";
 import { Header } from "@/shared/components/Header/Header";
 import { Categories } from "@/shared/components/Categories";
+import { Product } from "@/shared/types";
+import { api } from "@/shared/api/api";
 
 export const inter = Poiret_One({weight: "400", subsets: ['cyrillic']});
 
-const Men = () => {
+export async function getStaticProps() {
+  // Получаем продукты из API
+  const products = await api.getProducts("forMen");
+
+  return {
+    props: {
+      products, // Передаем продукты в качестве пропсов
+    },
+    revalidate: 180, // Переинициализация данных каждые 60 секунд для обновления
+  };
+}
+
+const Men = ({ products }: { products: Product[] }) => {
   return (
     <>
       <AppHead title="Мужчине" description="" />
       <Header />
       <div className={`flex flex-col justify-between ${inter.className}`}>
         <div className="md:mt-[60px] mt-16">
-          <PageProducts title="Мужчине" category="forMen" className="md:mt-[60px] mt-[46px]" />
+          <PageProducts title="Мужчине" products={products} className="md:mt-[60px] mt-[46px]" />
         </div>
         <div className="md:mt-[60px] mt-4">
           <Categories />

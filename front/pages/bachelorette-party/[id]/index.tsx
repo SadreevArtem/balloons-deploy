@@ -4,13 +4,25 @@ import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { ReactElement } from "react";
 import { DetailProductsClient } from "@/shared/components/DetailProductsClient/DetailProductsClient";
 import { Header } from "@/shared/components/Header/Header";
-import { GetServerSidePropsContext } from "next";
+import { GetStaticPropsContext } from "next";
 import { api } from "@/shared/api/api";
+import { Product } from "@/shared/types";
 
 
 export const inter = Poiret_One({ weight: "400", subsets: ['cyrillic'] });
 
-export const getServerSideProps = async ({ params }: GetServerSidePropsContext) => {
+export async function getStaticPaths() {
+
+  const products = await api.getProducts("bacheloretteParty");
+ 
+  const paths = products.map((product: Product) => ({
+    params: { id: product.id.toString() },
+  }));
+
+  return { paths, fallback: true }
+}
+
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const id = params?.id;
 
   if (!id) {
@@ -33,9 +45,9 @@ export const getServerSideProps = async ({ params }: GetServerSidePropsContext) 
   }
 };
 
-const ProductDetailClient = ({ item }: { item: any }) => {
+const ProductDetailClient = ({ item }: { item: Product | null }) => {
 
-  if (!item) return <p>Product not found</p>;
+  if (!item) return <p>Loading...</p>;
 
   return (
     <>

@@ -9,10 +9,23 @@ import { ReactElement } from "react";
 import { BaseLayout } from "@/layouts/BaseLayout/BaseLayout";
 import { Header } from "@/shared/components/Header/Header";
 import { Faq } from "@/shared/components/Faq/Faq";
+import { api } from "@/shared/api/api";
+import { Product } from "@/shared/types";
 
 export const inter = Poiret_One({ weight: "400", subsets: ["cyrillic"] });
 
-const Home = () => {
+export async function getStaticProps() {
+  // Получаем продукты из API
+  const products = await api.getSelectionsProducts();
+
+  return {
+    props: {
+      products, // Передаем продукты в качестве пропсов
+    },
+    revalidate: 180, // Переинициализация данных каждые 180 секунд для обновления
+  };
+}
+const Home = ({ products }: { products: Product[] }) => {
   return (
     <>
       <AppHead
@@ -27,8 +40,8 @@ const Home = () => {
           images={[
             // { url: "/images/banner.jpg" },
             // { url: "/images/banner2.jpg" },
-            { url: "/images/banner4.jpeg" },
-            { url: "/images/banner3.jpg" },
+            { url: "/images/banner4.webp" },
+            { url: "/images/banner3.webp" },
             // { url: "/images/banner5.jpg" },
             // { url: "/images/banner6.jpg" },
             // { url: "/images/banner7.jpg" },
@@ -40,7 +53,7 @@ const Home = () => {
           <Categories />
         </div>
         <div className="md:mt-[60px] mt-4">
-          <Selections title="Вам точно понравится" />
+          <Selections products={products} title="Вам точно понравится" />
         </div>
         <div className="md:mt-[60px] mt-4">
           <ReviewsBlock items={reviews} />

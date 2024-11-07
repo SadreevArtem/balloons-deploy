@@ -7,10 +7,24 @@ import { Header } from "@/shared/components/Header/Header";
 import { faqsGenderPartyPage, MetaData } from "@/shared/static";
 import { Categories } from "@/shared/components/Categories";
 import { Faq } from "@/shared/components/Faq/Faq";
+import { api } from "@/shared/api/api";
+import { Product } from "@/shared/types";
 
 export const inter = Poiret_One({ weight: "400", subsets: ["cyrillic"] });
 
-const GenderParty = () => {
+export async function getStaticProps() {
+  // Получаем продукты из API
+  const products = await api.getProducts("genderParty");
+
+  return {
+    props: {
+      products, // Передаем продукты в качестве пропсов
+    },
+    revalidate: 180, // Переинициализация данных каждые 60 секунд для обновления
+  };
+}
+
+const GenderParty = ({ products }: { products: Product[] }) => {
   return (
     <>
       <AppHead
@@ -25,7 +39,7 @@ const GenderParty = () => {
         <div className="md:mt-[60px] mt-16">
           <PageProducts
             title="Гендер - пати"
-            category="genderParty"
+            products={products}
             className="md:mt-[60px] mt-[46px]"
           />
         </div>
