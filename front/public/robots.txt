@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /api/
+Disallow: /*?phpinfo
+Disallow: /*?yclid
 Allow: /
 Host: https://barballs72.ru/
 Sitemap: https://barballs72.ru/sitemap.xml
