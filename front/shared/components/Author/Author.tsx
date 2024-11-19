@@ -52,12 +52,12 @@ export const Author: FC<BannerProps> = ({ images }) => {
             </CSSTransition>
           </SwitchTransition>
         </div>
-        <div className="md:hidden h-[60vh] relative w-full">
+        <div className="md:hidden h-[60vh] w-full">
           <Image
             src={"/images/banner3mob.jpg"}
             alt="Banner"
-            width={768}
-            height={512}
+            className="object-cover w-full"
+            fill
             priority
             sizes="100vw"
           />
