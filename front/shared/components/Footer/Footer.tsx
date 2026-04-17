@@ -2,7 +2,12 @@ import React from "react";
 import Link from "next/link";
 import { Socials } from "../Socials/Socials";
 import { inter } from "@/pages";
-import { CATALOG, CATALOG_FOOTER_PURPOSE, CATALOG_FOOTER_WHO, CategoriesMapsFooter } from "@/shared/static";
+import {
+  CATALOG,
+  CATALOG_FOOTER_PURPOSE,
+  CATALOG_FOOTER_WHO,
+  CategoriesMapsFooter,
+} from "@/shared/static";
 
 export const Footer: React.FC = () => {
   return (
@@ -57,7 +62,7 @@ export const Footer: React.FC = () => {
                 +7 (908) 879 19 22
               </Link>
               <p className="text-primary w-fit hover:text-hover">
-                г. Тюмень ул. Избышева 6
+                г. Тюмень Пермякова 2 стр. 4
               </p>
             </div>
           </div>
