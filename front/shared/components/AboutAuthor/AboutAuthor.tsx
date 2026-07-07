@@ -18,7 +18,7 @@ export const AboutAuthor: React.FC = ()=>{
               <Image
                 width={560}
                 height={750}
-                src={"/images/about.jpeg"}
+                src={"/images/banner.jpeg"}
                 alt={"воздушные шарики"}
                 className="top-0 left-0 right-0 bottom-0"
               />
@@ -31,7 +31,7 @@ export const AboutAuthor: React.FC = ()=>{
               <Image
                 width={560}
                 height={750}
-                src={"/images/about.jpeg"}
+                src={"/images/banner.jpeg"}
                 alt={"воздушные шарики"}
                 className="top-0 left-0 right-0 bottom-0"
               />

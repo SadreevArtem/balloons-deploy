@@ -1,4 +1,4 @@
-import { Order } from "../components/Cart";
+import { CreateOrderInput } from "../components/Cart";
 import { CategoryName } from "../components/Products/static";
 import { Product } from "../types";
 
@@ -114,7 +114,7 @@ class API {
         return data;
       });
   };
-  createOrder = (input: Order) =>
+  createOrder = (input: CreateOrderInput) =>
     fetch(`${this.baseUrl}/orders`, {
       method: "POST",
       headers: {

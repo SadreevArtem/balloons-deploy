@@ -1,7 +1,7 @@
 import React from "react";
 import { inter } from "@/pages";
 import { CartItemComponent } from "./components/CartItem";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { AppPhoneInputMasked } from "../AppPhoneInputMasked";
 import { getMaskedPhoneValidation } from "@/shared/lib";
 import { AppTextField } from "../AppTextField";
@@ -27,10 +27,16 @@ export type Order = {
   orderString: string;
   comment: string;
   createdAt: string;
+  personalDataConsent: boolean;
+  personalDataConsentDate?: string;
+  personalDataConsentVersion?: string;
 };
 
-type Inputs = Order
+type Inputs = Pick<Order, "name" | "phone" | "adress" | "comment" | "personalDataConsent">;
 
+export type CreateOrderInput = Omit<Order, "id" | "createdAt">;
+
+const PERSONAL_DATA_CONSENT_VERSION = "2026-07-07";
 
 export const CartComponent: React.FC<Props> = ({title, className}) => {
   const router = useRouter();
@@ -41,6 +47,10 @@ export const CartComponent: React.FC<Props> = ({title, className}) => {
     control,
     formState: { errors },
   } = useForm<Inputs>();
+  const personalDataConsent = useWatch({
+    control,
+    name: "personalDataConsent",
+  });
   const mutation = useMutation({
     mutationFn: api.createOrder,
     onSuccess: () => {
@@ -66,6 +76,9 @@ export const CartComponent: React.FC<Props> = ({title, className}) => {
     mutation.mutate({
       ...data,
       orderString,
+      personalDataConsent: true,
+      personalDataConsentDate: new Date().toISOString(),
+      personalDataConsentVersion: PERSONAL_DATA_CONSENT_VERSION,
     });
 
   return (
@@ -174,10 +187,46 @@ export const CartComponent: React.FC<Props> = ({title, className}) => {
                   />
                 )}
               />
+              <Controller
+                name="personalDataConsent"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <label className="flex items-start gap-3 text-primary text-base leading-5">
+                    <input
+                      type="checkbox"
+                      className="mt-1 h-4 w-4 shrink-0 accent-primary"
+                      checked={!!field.value}
+                      onChange={(event) => field.onChange(event.target.checked)}
+                      onBlur={field.onBlur}
+                      name={field.name}
+                      ref={field.ref}
+                    />
+                    <span>
+                      Я даю{" "}
+                      <Link className="underline hover:text-hover" href="/consent">
+                        согласие на обработку персональных данных
+                      </Link>{" "}
+                      и соглашаюсь с{" "}
+                      <Link className="underline hover:text-hover" href="/privacy-policy">
+                        Политикой обработки персональных данных
+                      </Link>
+                      .
+                    </span>
+                  </label>
+                )}
+              />
+              {errors.personalDataConsent && (
+                <span className="text-red-500">
+                  Необходимо дать согласие на обработку персональных данных
+                </span>
+              )}
               <span className="text-primary text-xl">{`Итого: ${totalPrice} руб.`}</span>
               <input
                 type="submit"
-                className="bg-[#d1baba] text-lg px-4 h-[42px] rounded-2 text-white self-center cursor-pointer"
+                value="Оформить заказ"
+                disabled={!personalDataConsent || mutation.isPending}
+                className="bg-[#d1baba] text-lg px-4 h-[42px] rounded-2 text-white self-center cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
               />
             </form>
           )}

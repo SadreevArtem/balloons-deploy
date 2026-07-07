@@ -101,6 +101,9 @@ export const Footer: React.FC = () => {
             <Link href={"/useful"}>
               <span>Полезная информация</span>
             </Link>
+            <Link href={"/privacy-policy"}>
+              <span>Политика обработки персональных данных</span>
+            </Link>
           </div>
         </div>
       </footer>
