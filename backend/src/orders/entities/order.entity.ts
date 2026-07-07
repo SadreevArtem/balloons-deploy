@@ -24,6 +24,12 @@ export class Order {
   adress: string;
   @Column({ default: 'коментарий' })
   comment: string;
+  @Column({ default: false })
+  personalDataConsent: boolean;
+  @Column({ type: 'timestamptz', nullable: true })
+  personalDataConsentDate: Date | null;
+  @Column({ nullable: true })
+  personalDataConsentVersion: string | null;
   @Column()
   @CreateDateColumn()
   createdAt: Date;
