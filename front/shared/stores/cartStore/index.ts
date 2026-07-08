@@ -7,14 +7,19 @@ export type CartState = {
     removeCart: (item: Product) => void;
     clearCart: () => void;
     deleteItem: (itemId: number) => void;
+    hydrateCart: () => void;
 };
 
 export const useCartStore = create<CartState>(
   (set): CartState => ({
-    cart:
-      typeof window !== "undefined"
-        ? JSON.parse(window.localStorage.getItem("cart") || "[]")
-        : [],
+    cart: [],
+    hydrateCart: () => {
+      try {
+        set({ cart: JSON.parse(window.localStorage.getItem("cart") || "[]") });
+      } catch {
+        set({ cart: [] });
+      }
+    },
     addCart: (item: Product) =>
       set((state) => {
         const existingProduct = state.cart.find(

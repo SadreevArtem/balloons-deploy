@@ -6,14 +6,21 @@ export type FavoriteState = {
     favorite: Array<number> | [];
     addFavorite: (id: number) => void;
     removeFavorite: (id: number) => void;
+    hydrateFavorite: () => void;
 };
 
 export const useFavoriteStore = create<FavoriteState>(
   (set): FavoriteState => ({
-    favorite:
-      typeof window !== "undefined"
-        ? JSON.parse(window.localStorage.getItem("favorite") || "[]")
-        : [],
+    favorite: [],
+    hydrateFavorite: () => {
+      try {
+        set({
+          favorite: JSON.parse(window.localStorage.getItem("favorite") || "[]"),
+        });
+      } catch {
+        set({ favorite: [] });
+      }
+    },
     addFavorite: (id: number) =>
       set((state) => {
         const updatedFavorite = [...state.favorite, id];

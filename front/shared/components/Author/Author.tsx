@@ -10,6 +10,7 @@ type BannerProps = {
 export const Author: FC<BannerProps> = ({ images }) => {
   const [activeBannerIndex, setActiveBannerIndex] = useState(0);
   const activeBanner = images[activeBannerIndex];
+  const activeBannerKey = activeBanner?.url ?? activeBannerIndex;
   const imageRef = useRef<HTMLImageElement>(null);
 
   const onNextBannerIndex = useCallback(() => {
@@ -27,10 +28,10 @@ export const Author: FC<BannerProps> = ({ images }) => {
     <div className="relative w-full">
       <div className="flex justify-center items-start">
         <div className="h-[60vh] max-md:hidden">
-          <SwitchTransition mode="in-out">
+          <SwitchTransition mode="out-in">
             <CSSTransition
               nodeRef={imageRef}
-              key={activeBannerIndex}
+              key={activeBannerKey}
               timeout={1000}
               className="transition-opacity duration-1000 object-cover"
               classNames={{

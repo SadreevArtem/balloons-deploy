@@ -106,9 +106,9 @@ export const MetricsConsent: React.FC = () => {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[100] bg-white/95 px-4 py-4 shadow-[0_-4px_20px_rgba(0,0,0,0.12)] backdrop-blur">
-      <div className="container flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p className="text-primary text-base leading-6 md:max-w-[920px]">
+    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-[#f9deaf] bg-[#fffaf7]/95 px-3 py-3 shadow-[0_-4px_18px_rgba(82,72,63,0.10)] backdrop-blur md:px-4 md:py-3">
+      <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-5">
+        <p className="text-primary text-xs leading-[18px] [text-align-last:left] min-[480px]:text-justify md:max-w-[920px] md:text-sm md:leading-5">
           Мы используем файлы cookie и сервис Яндекс.Метрика для анализа
           посещаемости сайта и улучшения его работы. Нажимая “Принять”, вы
           соглашаетесь с обработкой данных, указанных в{" "}
@@ -117,17 +117,17 @@ export const MetricsConsent: React.FC = () => {
           </Link>
           .
         </p>
-        <div className="flex shrink-0 gap-3 max-sm:flex-col">
+        <div className="grid shrink-0 grid-cols-2 gap-2 md:flex md:gap-2.5">
           <button
             type="button"
-            className="h-[42px] rounded-2 bg-[#d1baba] px-5 text-base text-white hover:opacity-90"
+            className="h-8 min-w-0 rounded-2 bg-[#d1baba] px-3 text-xs text-white transition hover:opacity-90 md:h-[34px] md:min-w-[96px] md:px-4 md:text-sm"
             onClick={handleAccept}
           >
             Принять
           </button>
           <button
             type="button"
-            className="h-[42px] rounded-2 border border-primary px-5 text-base text-primary hover:bg-[#f7f7f7]"
+            className="h-8 min-w-0 rounded-2 border border-primary/60 px-3 text-xs text-primary transition hover:border-primary hover:bg-white md:h-[34px] md:min-w-[96px] md:px-4 md:text-sm"
             onClick={handleDecline}
           >
             Отклонить
